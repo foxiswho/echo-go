@@ -4,6 +4,10 @@ RBAC权限,JWT、Socket,session,cookie,缓存,登录,注册,上传,db数据库�
 
 > 本案例是 对 [echo-web](https://github.com/hb-go/echo-web) 的增强版，是站在巨人的肩膀上
 
+> echo 主页 [echo](https://echo.labstack.com/)
+
+> echo 英文文档 [echo doc](https://echo.labstack.com/guide)
+
 > Echo中文文档 [go-echo.org](http://go-echo.org/)
 
 > Requires
