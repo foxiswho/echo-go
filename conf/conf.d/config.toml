@@ -1,0 +1,46 @@
+[template]
+# 模板文件
+src = "config.conf.tmpl"
+# 输出文件
+dest = "./conf/conf.toml"
+
+keys = [
+    "/release_mode",
+    "/log_level",
+    "/session/session_store",
+    "/session/session_secret_key",
+    "/session/session_id_name",
+    "/cache_store",
+    "/app/name",
+    "/server/graceful",
+    "/server/addr",
+    "/server/domain_api",
+    "/server/domain_admin",
+    "/server/domain_web",
+    "/server/domain_socket",
+    "/static/type",
+    "/tmpl/type",
+    "/tmpl/data",
+    "/tmpl/dir",
+    "/tmpl/suffix",
+    "/database/name",
+    "/database/user_name",
+    "/database/pwd",
+    "/database/host",
+    "/database/port",
+    "/redis/server",
+    "/redis/pwd",
+    "/memcached/server",
+    "/opentracing/disable",
+    "/opentracing/type",
+    "/opentracing/service_name",
+    "/opentracing/address",
+    "/upload/default/type",
+    "/upload/default/ext",
+    "/upload/default/root_path",
+    "/upload/default/root_path_tmp",
+    "/upload/default/size",
+    "/upload/default/local_save_is",
+    "/upload/default/http",
+    "/secret/upload_aes_key",
+]

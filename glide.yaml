@@ -1,0 +1,53 @@
+package: github.com/foxiswho/shop-go
+import:
+- package: github.com/BurntSushi/toml
+  version: ~0.3.0
+- package: github.com/bradfitz/gomemcache
+  subpackages:
+  - memcache
+- package: github.com/dchest/captcha
+- package: github.com/dgrijalva/jwt-go
+  version: ~3.2.0
+- package: github.com/flosch/pongo2
+  version: ~3.0.0
+- package: github.com/garyburd/redigo
+  version: ~1.6.0
+  subpackages:
+  - redis
+- package: github.com/go-sql-driver/mysql
+  version: ~1.3.0
+- package: github.com/gomodule/redigo
+  version: ~2.0.0
+  subpackages:
+  - redis
+- package: github.com/gorilla/securecookie
+  version: ~1.1.1
+- package: github.com/gorilla/sessions
+  version: ~1.1.0
+- package: github.com/labstack/echo
+  version: ~3.3.5
+  subpackages:
+  - middleware
+- package: github.com/labstack/gommon
+  version: ~0.2.5
+  subpackages:
+  - log
+- package: github.com/opentracing/opentracing-go
+  version: ~1.0.2
+- package: github.com/robfig/go-cache
+- package: github.com/uber/jaeger-client-go
+  version: ~2.14.0
+  subpackages:
+  - config
+- package: github.com/uber/jaeger-lib
+  version: ~1.5.0
+  subpackages:
+  - metrics
+- package: github.com/xormplus/xorm
+- package: golang.org/x/net
+  subpackages:
+  - websocket
+- package: sourcegraph.com/sourcegraph/appdash
+  subpackages:
+  - opentracing
+  - traceapp

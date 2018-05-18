@@ -1,0 +1,65 @@
+<!-- templates/layout.tmpl -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/assets/js/lib/require-setup.js"></script>
+    <script data-main="scripts/main" src="/assets/js/lib/require.js"></script>
+  </head>
+  <body>
+
+    <!-- 导航条 -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="/">Home</a> -->
+          <a class="navbar-brand" href="/">
+            <img alt="Brand" width="20" height="20" src="/img/icon_brand.png">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="/demo">Demo</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://github.com/hobo86">GitHub</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/regist">Regist</a></li>
+                <li class="divider"></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Render the current template here -->
+    <div class="container" style="padding:0px 10px; width:900px;">
+      {{ yield }}
+      <p class="text-center">This is the {{ current }} page.</p>
+    </div>
+    <script type="text/javascript">
+      requirejs(['bootstrap']);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{{define "title" }}<title>{{.title}} Page</title>{{ end }}
+
+{{ define "scripts" }}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+{{ end }}
+
+{{define "content" }}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<div class="jumbotron">
+		<h1>Welcome!</h1>
+		<p>吧啦吧啦吧啦！</p>
+		<p>Hello {{.user.Nickname}}!</p>
+		<p><a class="btn btn-primary btn-lg" href="https://github.com/hb-chen" role="button">GitHub</a></p>
+	</div>
+</div>
+{{ end }}

@@ -1,0 +1,24 @@
+{% extends "../../base.html" %}
+
+{% block head_title %}
+{{title}}
+{% endblock %}
+
+
+{% block head_scripts %}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<h2 class="text-center">{{title}}</h2>
+	<form method="POST" action="/example/test/register?{{redirectParam}}={{redirect}}">
+		<input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+		<input type="text" placeholder="Username" name="nickname" /><br />
+		<input type="password" placeholder="Password" name="password" /><br />
+		<button>Register</button>	
+	</form>
+</div>
+{% endblock %}

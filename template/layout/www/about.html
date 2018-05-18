@@ -1,0 +1,13 @@
+{{define "title" }}<title>{{.title}} Page</title>{{ end }}
+
+{{ define "scripts" }}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+{{ end }}
+
+{{define "content"}}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<h2 class="text-center">{{.title}}</h2>
+</div>
+{{ end }}

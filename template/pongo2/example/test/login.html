@@ -1,0 +1,75 @@
+{% extends "../../base.html" %}
+
+{% block head_title %}
+{{title}}
+{% endblock %}
+
+
+{% block head_scripts %}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+
+<!-- 验证码 -->
+<script>
+function setSrcQuery(e, q) {
+	var src  = e.src;
+	var p = src.indexOf('?');
+	if (p >= 0) {
+		src = src.substr(0, p);
+	}
+	e.src = src + "?" + q
+}
+
+function playAudio() {
+	var le = document.getElementById("lang");
+	var lang = le.options[le.selectedIndex].value;
+	var e = document.getElementById('audio')
+	setSrcQuery(e, "lang=" + lang)
+	e.style.display = 'block';
+	e.autoplay = 'true';
+	return false;
+}
+
+function changeLang() {
+	var e = document.getElementById('audio')
+	if (e.style.display == 'block') {
+		playAudio();
+	}
+}
+
+function reload() {
+	setSrcQuery(document.getElementById('image'), "reload=" + (new Date()).getTime());
+	setSrcQuery(document.getElementById('audio'), (new Date()).getTime());
+	return false;
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<h2 class="text-center">{{title}}</h2>
+	<form method="POST" action="/example/test/login?{{redirectParam}}={{redirect}}" enctype="application/json">
+		<input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+		<input type="text" placeholder="Username" name="nickname" /><br />
+		<input type="password" placeholder="Password" name="password" /><br />
+
+		<!-- 验证码 -->
+		<p><img id=image src="/captcha/{{CaptchaId}}.png" alt="Captcha image"></p>
+		<a href="#" onclick="reload()">Reload</a> | <a href="#" onclick="playAudio()">Play Audio</a>
+		<select id="lang" onchange="changeLang()">
+			<option value="en">English</option>
+			<option value="ru">Russian</option>
+			<option value="zh">Chinese</option>
+		</select>
+		<audio id=audio controls style="display:none" src="/captcha/{{CaptchaId}}.wav" preload=none>
+		  You browser doesn't support audio.
+		  <a href="/captcha/download/{{CaptchaId}}.wav">Download file</a> to play it in the external player.
+		</audio>
+		<input type=hidden name=captchaId value="{{CaptchaId}}"><br />
+		<input name=captchaSolution><br />
+		
+		<button>Login</button>	
+	</form>
+</div>
+{% endblock %}

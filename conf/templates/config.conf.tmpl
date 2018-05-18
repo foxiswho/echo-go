@@ -1,0 +1,93 @@
+# default false
+release_mode = {{getv "/release_mode"}}
+
+# default DEBUG, DEBUG INFO WARN ERROR OFF
+log_level = "{{getv "/log_level"}}"
+
+# REDIS,FILE,COOKIE(COOKIE Default)
+session_store = "{{getv "/session/session_store"}}"
+
+# 32或64个英文字符
+session_secret_key = "{{getv "/session/session_secret_key"}}"
+
+# 生成的session 名字 或者 cookie 名字
+session_id_name = "{{getv "/session/session_id_name"}}"
+
+# REDIS,MEMCACHED,IN_MEMORY(IN_MEMORY Default)
+cache_store = "{{getv "/cache_store"}}"
+
+[app]
+name = "{{getv "/app/name"}}"
+
+[server]
+graceful = {{getv "/server/graceful"}}
+addr = "{{getv "/server/addr"}}"
+
+# Domains
+domain_api = "{{getv "/server/domain_api"}}"
+domain_admin = "{{getv "/server/domain_admin"}}"
+domain_web = "{{getv "/server/domain_web"}}"
+domain_socket = "{{getv "/server/domain_socket"}}"
+
+[static]
+# BINDATA,FILE(FILE Default)
+type = "{{getv "/static/type"}}"
+
+[tmpl]
+# PONGO2,TEMPLATE(TEMPLATE Default)
+type = "{{getv "/tmpl/type"}}"
+# BINDATA,FILE(FILE Default)
+data = "{{getv "/tmpl/data"}}"
+# PONGO2(template/pongo2),TEMPLATE(template)
+dir = "{{getv "/tmpl/dir"}}"
+# .html,.tpl
+suffix = "{{getv "/tmpl/suffix"}}"
+
+[database]
+name = "{{getv "/database/name"}}"
+user_name = "{{getv "/database/user_name"}}"
+pwd  = "{{getv "/database/pwd"}}"
+host = "{{getv "/database/host"}}"
+port = "{{getv "/database/port"}}"
+
+[redis]
+server = "{{getv "/redis/server"}}"
+pwd = "{{getv "/redis/pwd"}}"
+
+[memcached]
+server = "{{getv "/memcached/server"}}"
+
+[opentracing]
+disable = {{getv "/opentracing/disable"}}
+
+# jaeger or appdash
+type = "{{getv "/opentracing/type"}}"
+
+# jaeger serviceName
+service_name = "{{getv "/opentracing/service_name"}}"
+
+# jaeger-agent 127.0.0.1:6831
+# appdash http://localhost:8700
+address = "{{getv "/opentracing/address"}}"
+
+[default]
+#上传方式 local:本地 QiNiu:七牛云存储
+type="{{getv "/upload/default/type"}}"
+#允许上传后缀
+ext="{{getv "/upload/default/ext"}}"
+#上传文件目录
+root_path="{{getv "/upload/default/root_path"}}"
+#临时文件目录
+root_path_tmp="{{getv "/upload/default/root_path_tmp"}}"
+#最大上传文件大小 5*1024*1024
+size={{getv "/upload/default/size"}}
+#是否本地保存
+local_save_is={{getv "/upload/default/local_save_is"}}
+#域名
+http="{{getv "/upload/default/http"}}"
+
+
+
+[secret]
+# AES-128。key长度：16, 24, 32 bytes 对应 AES-128, AES-192, AES-256
+upload_aes_key="{{getv "/secret/upload_aes_key"}}"

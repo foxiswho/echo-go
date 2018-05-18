@@ -1,0 +1,40 @@
+{% extends "../../base.html" %}
+
+{% block head_title %}
+{{title}}
+{% endblock %}
+
+
+{% block head_scripts %}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<h2 class="text-center">{{title}}</h2>
+	<form method="POST" action="/example/test/upload" enctype="multipart/form-data">
+		<input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+        Files: <input type="file" name="file"><br>
+		<button>upload</button>
+	</form>
+</div>
+<div class="container" style="padding:0px 10px; width:900px;">
+    <h2 class="text-center">多个上传</h2>
+    <form method="POST" action="/example/test/upload-more" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+        Files: <input type="file" name="files" multiple><br>
+        <button>upload</button>
+    </form>
+</div>
+<div class="container" style="padding:0px 10px; width:900px;">
+    <h2 class="text-center">上传保存到数据库</h2>
+    <form method="POST" action="/example/test/upload-db" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+        upload_token:<input type="text" name="token" value="{{upload_token}}" /><br />
+        Files: <input type="file" name="file"><br>
+        <button>upload</button>
+    </form>
+</div>
+{% endblock %}

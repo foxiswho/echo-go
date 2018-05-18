@@ -1,0 +1,94 @@
+# default false
+release_mode = false
+
+# default DEBUG, DEBUG INFO WARN ERROR OFF
+log_level = "DEBUG"
+
+# REDIS,FILE,COOKIE(COOKIE Default)
+session_store = "REDIS"
+# 32或64个英文字符
+session_secret_key = "qwertyuiopasdfghjklzxcvbnmqazwsx"
+# 生成的session 名字 或者 cookie 名字
+session_id_name = "SESSID"
+
+# REDIS,MEMCACHED,IN_MEMORY(IN_MEMORY Default)
+cache_store = "REDIS"
+
+[app]
+name = "Echo Web"
+
+[server]
+graceful = true
+addr = ":8080"
+
+# Domains
+#domain_admin = "admin.a.net"
+#domain_api = "api.a.net"
+#domain_socket = "socket.a.net"
+#domain_web = "localhost"
+#
+domain_admin = "echo.admin.localhost.com"
+domain_api = "echo.api.localhost.com"
+domain_socket = "echo.socket.localhost.com"
+domain_web = "echo.www.localhost.com"
+
+[static]
+# BINDATA,FILE(FILE Default)
+type = "BINDATA"
+
+[tmpl]
+# PONGO2,TEMPLATE(TEMPLATE Default)
+type = "PONGO2"
+# BINDATA,FILE(FILE Default)
+data = "BINDATA"
+# PONGO2(template/pongo2),TEMPLATE(template)
+dir = "template/pongo2"
+# .html,.tpl
+suffix = ".html"
+
+[database]
+name = "shop_go"
+user_name = "root"
+pwd  = "root"
+host = "127.0.0.1"
+port = "3306"
+
+[redis]
+server = "127.0.0.1:6379"
+pwd = ""
+
+[memcached]
+server = "localhost:11211"
+
+[opentracing]
+disable = true
+
+# jaeger or appdash
+type = "jaeger"
+
+# jaeger serviceName
+service_name = "echo-web"
+
+# jaeger-agent 127.0.0.1:6831
+# appdash http://localhost:8700
+address = "127.0.0.1:6831"
+
+[upload]
+#上传方式 local:本地 QiNiu:七牛云存储
+type="local"
+#允许上传后缀
+ext="jpg,gif,png,jpeg"
+#上传文件目录
+root_path="/uploads/image/"
+#临时文件目录
+root_path_tmp="/uploads/tmp/"
+#最大上传文件大小 5*1024*1024
+size=5242880
+#是否本地保存
+local_save_is=true
+#域名
+http="#upload_default"
+
+[secret]
+# AES-128。key长度：16, 24, 32 bytes 对应 AES-128, AES-192, AES-256
+upload_aes_key="ABC&E_GHpoiuyqw1"

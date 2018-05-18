@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+{{title}}
+{% endblock %}
+
+
+{% block head_scripts %}
+<script type="text/javascript">
+	requirejs(['bootstrap']);
+</script>
+
+<!-- 验证码 -->
+<script>
+function setSrcQuery(e, q) {
+	var src  = e.src;
+	var p = src.indexOf('?');
+	if (p >= 0) {
+		src = src.substr(0, p);
+	}
+	e.src = src + "?" + q
+}
+
+function playAudio() {
+	var le = document.getElementById("lang");
+	var lang = le.options[le.selectedIndex].value;
+	var e = document.getElementById('audio')
+	setSrcQuery(e, "lang=" + lang)
+	e.style.display = 'block';
+	e.autoplay = 'true';
+	return false;
+}
+
+function changeLang() {
+	var e = document.getElementById('audio')
+	if (e.style.display == 'block') {
+		playAudio();
+	}
+}
+
+function reload() {
+	setSrcQuery(document.getElementById('image'), "reload=" + (new Date()).getTime());
+	setSrcQuery(document.getElementById('audio'), (new Date()).getTime());
+	return false;
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:0px 10px; width:900px;">
+	<h2 class="text-center">{{title}}</h2>
+	<form method="POST" action="/admin_login/login?{{redirectParam}}={{redirect}}" enctype="application/json">
+		<input type="hidden" name="_csrf" value="{{_csrf}}" /><br />
+		<input type="text" placeholder="Username" name="username" /><br />
+		<input type="password" placeholder="Password" name="password" /><br />
+		<input name=captchaSolution><br />
+		
+		<button>Login</button>	
+	</form>
+</div>
+{% endblock %}
