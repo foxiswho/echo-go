@@ -33,7 +33,7 @@ RBAC权限,JWT、Socket,session,cookie,缓存,登录,注册,上传,db数据库�
 
 ##### 1.源码下载
 ```shell
-$ go get github.com:foxiswho/echo-go
+$ go get github.com/foxiswho/echo-go
 ```
 
 ##### 2.依赖安装
