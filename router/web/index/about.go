@@ -1,7 +1,7 @@
 package index
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 )
 
 func AboutHandler(c *base.BaseContext) error {

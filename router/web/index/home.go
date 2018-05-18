@@ -4,12 +4,12 @@ import (
 	"net/http"
 	"github.com/opentracing/opentracing-go"
 	"fmt"
-	//"github.com/foxiswho/shop-go/model"
-	"github.com/foxiswho/shop-go/module/model"
-	"github.com/foxiswho/shop-go/module/log"
-	. "github.com/foxiswho/shop-go/conf"
-	sauth "github.com/foxiswho/shop-go/service/user_service/auth"
-	"github.com/foxiswho/shop-go/router/base"
+	//"github.com/foxiswho/echo-go/model"
+	"github.com/foxiswho/echo-go/module/model"
+	"github.com/foxiswho/echo-go/module/log"
+	. "github.com/foxiswho/echo-go/conf"
+	sauth "github.com/foxiswho/echo-go/service/user_service/auth"
+	"github.com/foxiswho/echo-go/router/base"
 )
 
 func HomeHandler(c *base.BaseContext) error {

@@ -4,8 +4,8 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/foxiswho/shop-go/module/log"
-	"github.com/foxiswho/shop-go/router"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/router"
 )
 
 var helpInfo = "help\n  -h      		帮助\n  -c conf/conf.toml	配置文件路径，默认conf/conf.toml\n"

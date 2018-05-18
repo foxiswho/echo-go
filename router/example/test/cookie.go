@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 	"fmt"
 	"time"
 )

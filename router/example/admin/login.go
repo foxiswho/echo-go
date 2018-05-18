@@ -2,10 +2,10 @@ package admin
 
 import (
 	"net/http"
-	"github.com/foxiswho/shop-go/router/base"
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/module/log"
-	userService "github.com/foxiswho/shop-go/service/example_service"
+	"github.com/foxiswho/echo-go/router/base"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/log"
+	userService "github.com/foxiswho/echo-go/service/example_service"
 	"fmt"
 )
 

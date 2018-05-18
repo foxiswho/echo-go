@@ -3,7 +3,7 @@ package conv
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/foxiswho/shop-go/util"
+	"github.com/foxiswho/echo-go/util"
 )
 
 //obj 反序列化为字符串

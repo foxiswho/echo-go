@@ -2,7 +2,7 @@
 Go web framework Echo example. 
 RBAC权限,JWT、Socket,session,cookie,缓存,登录,注册,上传,db数据库操作,生成models,service演示
 
-> 本案例是是 对 [echo-web](https://github.com/hb-go/echo-web) 的增强版，站在巨人的肩膀上
+> 本案例是 对 [echo-web](https://github.com/hb-go/echo-web) 的增强版，是站在巨人的肩膀上
 
 > Echo中文文档 [go-echo.org](http://go-echo.org/)
 
@@ -29,7 +29,7 @@ RBAC权限,JWT、Socket,session,cookie,缓存,登录,注册,上传,db数据库�
 
 ##### 1.源码下载
 ```shell
-$ go get github.com:foxiswho/shop-go
+$ go get github.com:foxiswho/echo-go
 ```
 
 ##### 2.依赖安装
@@ -218,13 +218,13 @@ util            公共工具
 
 功能 | 描述
 :--- | :---
-[配置](https://github.com/foxiswho/shop-go/tree/master/conf) | [toml](http://github.com/BurntSushi/toml)配置文件
-[子域名部署](https://github.com/foxiswho/shop-go/blob/master/router/router.go) | 子域名区分模块
-[缓存](https://github.com/foxiswho/shop-go/blob/master/module/cache) | Redis、Memcached、Memory
-[Session](https://github.com/foxiswho/shop-go/blob/master/module/session) | Redis、File、Cookie，支持Flash
-[ORM](https://github.com/foxiswho/shop-go/tree/master/module/db) | Fork [xorm]( github.com/go-xorm/xorm)
-[权限](https://github.com/foxiswho/shop-go/blob/master/middleware/auth) |  Fork [casbin]( github.com/casbin/casbin)
-[模板](https://github.com/foxiswho/shop-go/tree/master/module/render) | 支持html/template、[pongo2](http://github.com/flosch/pongo2)，模板支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
+[配置](https://github.com/foxiswho/echo-go/tree/master/conf) | [toml](http://github.com/BurntSushi/toml)配置文件
+[子域名部署](https://github.com/foxiswho/echo-go/blob/master/router/router.go) | 子域名区分模块
+[缓存](https://github.com/foxiswho/echo-go/blob/master/module/cache) | Redis、Memcached、Memory
+[Session](https://github.com/foxiswho/echo-go/blob/master/module/session) | Redis、File、Cookie，支持Flash
+[ORM](https://github.com/foxiswho/echo-go/tree/master/module/db) | Fork [xorm]( github.com/go-xorm/xorm)
+[权限](https://github.com/foxiswho/echo-go/blob/master/middleware/auth) |  Fork [casbin]( github.com/casbin/casbin)
+[模板](https://github.com/foxiswho/echo-go/tree/master/module/render) | 支持html/template、[pongo2](http://github.com/flosch/pongo2)，模板支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
 静态 | 静态资源，支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
 安全 | CORS、CSRF、XSS、HSTS、验证码等
 [OpenTracing](http://opentracing.io/) | Tracer支持Jaeger、Appdash，在Request、ORM层做跟踪，可在conf配置开启)
@@ -234,7 +234,7 @@ util            公共工具
 ## 生成models
 ```shel
 #进入项目根目录
-cd src/github.com/foxiswho/shop-go/
+cd src/github.com/foxiswho/echo-go/
 #使用命令
 xorm reverse mysql root:root@/shop_go?charset=utf8 template/design/goxorm
 ```

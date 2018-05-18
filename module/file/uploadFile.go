@@ -10,13 +10,13 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/util"
-	"github.com/foxiswho/shop-go/util/datetime"
-	"github.com/foxiswho/shop-go/util/crypt"
-	"github.com/foxiswho/shop-go/models"
-	"github.com/foxiswho/shop-go/util/conv"
-	"github.com/foxiswho/shop-go/module/db"
+	"github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/util"
+	"github.com/foxiswho/echo-go/util/datetime"
+	"github.com/foxiswho/echo-go/util/crypt"
+	"github.com/foxiswho/echo-go/models"
+	"github.com/foxiswho/echo-go/util/conv"
+	"github.com/foxiswho/echo-go/module/db"
 )
 
 //上传成功后返回结构体

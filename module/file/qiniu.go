@@ -9,9 +9,9 @@ import (
 	"os"
 	"strings"
 	"time"
-	"github.com/foxiswho/shop-go/module/cache"
-	"github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/util"
+	"github.com/foxiswho/echo-go/module/cache"
+	"github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/util"
 )
 
 //七牛云存储

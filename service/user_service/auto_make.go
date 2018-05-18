@@ -2,9 +2,9 @@ package user_service
 
 import (
 	"fmt"
-	"github.com/foxiswho/shop-go/models"
-	"github.com/foxiswho/shop-go/module/db"
-	"github.com/foxiswho/shop-go/util"
+	"github.com/foxiswho/echo-go/models"
+	"github.com/foxiswho/echo-go/module/db"
+	"github.com/foxiswho/echo-go/util"
 )
 
 //初始化列表

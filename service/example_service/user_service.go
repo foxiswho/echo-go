@@ -3,9 +3,9 @@ package example_service
 import (
 	"time"
 	"fmt"
-	"github.com/foxiswho/shop-go/module/db"
-	"github.com/foxiswho/shop-go/module/log"
-	"github.com/foxiswho/shop-go/service/user_service/auth"
+	"github.com/foxiswho/echo-go/module/db"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/service/user_service/auth"
 )
 
 type User struct {

@@ -1,8 +1,8 @@
 package cache
 
 import (
-	ec "github.com/foxiswho/shop-go/middleware/cache"
-	. "github.com/foxiswho/shop-go/conf"
+	ec "github.com/foxiswho/echo-go/middleware/cache"
+	. "github.com/foxiswho/echo-go/conf"
 	"time"
 )
 

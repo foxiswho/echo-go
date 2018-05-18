@@ -4,11 +4,11 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/module/cache"
-	"github.com/foxiswho/shop-go/module/render"
-	"github.com/foxiswho/shop-go/module/session"
-	authService "github.com/foxiswho/shop-go/service/user_service/auth"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/cache"
+	"github.com/foxiswho/echo-go/module/render"
+	"github.com/foxiswho/echo-go/module/session"
+	authService "github.com/foxiswho/echo-go/service/user_service/auth"
 )
 
 func Routers() *echo.Echo {

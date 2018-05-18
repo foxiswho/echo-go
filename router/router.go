@@ -11,11 +11,11 @@ import (
 	mw "github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
 
-	. "github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/middleware/opentracing"
-	"github.com/foxiswho/shop-go/router/example"
-	"github.com/foxiswho/shop-go/router/example/socket"
-	"github.com/foxiswho/shop-go/router/web"
+	. "github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/middleware/opentracing"
+	"github.com/foxiswho/echo-go/router/example"
+	"github.com/foxiswho/echo-go/router/example/socket"
+	"github.com/foxiswho/echo-go/router/web"
 )
 
 type (

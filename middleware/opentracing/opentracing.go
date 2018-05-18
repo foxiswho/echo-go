@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	DefaultKey = "github.com/foxiswho/shop-go/middleware/opentracing"
+	DefaultKey = "github.com/foxiswho/echo-go/middleware/opentracing"
 
 	TracerTypeJaeger = "jaeger"
 

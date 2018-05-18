@@ -4,8 +4,8 @@ import (
 	"github.com/casbin/casbin"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/module/log"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/log"
 	"strconv"
 )
 

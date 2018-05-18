@@ -3,9 +3,9 @@ package test
 import (
 	"strconv"
 
-	"github.com/foxiswho/shop-go/service/example_service"
+	"github.com/foxiswho/echo-go/service/example_service"
 	"fmt"
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 )
 
 func UserHandler(c *base.BaseContext) error {

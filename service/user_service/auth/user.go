@@ -1,12 +1,12 @@
 package auth
 
 import (
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/module/log"
-	"github.com/foxiswho/shop-go/module/db"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/module/db"
 	"fmt"
-	"github.com/foxiswho/shop-go/module/model"
-	"github.com/foxiswho/shop-go/models"
+	"github.com/foxiswho/echo-go/module/model"
+	"github.com/foxiswho/echo-go/models"
 )
 
 type User struct {

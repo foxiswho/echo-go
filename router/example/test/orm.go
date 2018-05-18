@@ -1,12 +1,12 @@
 package test
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
-	"github.com/foxiswho/shop-go/service/example_service"
+	"github.com/foxiswho/echo-go/router/base"
+	"github.com/foxiswho/echo-go/service/example_service"
 	"fmt"
-	"github.com/foxiswho/shop-go/util/str"
-	"github.com/foxiswho/shop-go/module/db"
-	"github.com/foxiswho/shop-go/service/user_service"
+	"github.com/foxiswho/echo-go/util/str"
+	"github.com/foxiswho/echo-go/module/db"
+	"github.com/foxiswho/echo-go/service/user_service"
 )
 
 type Orm struct {

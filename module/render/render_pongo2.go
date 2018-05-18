@@ -8,9 +8,9 @@ import (
 
 	"github.com/labstack/echo"
 
-	. "github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/module/log"
-	bdTmpl "github.com/foxiswho/shop-go/template"
+	. "github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/module/log"
+	bdTmpl "github.com/foxiswho/echo-go/template"
 )
 
 func pongo2() echo.MiddlewareFunc {

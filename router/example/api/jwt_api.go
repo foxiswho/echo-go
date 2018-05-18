@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/foxiswho/shop-go/middleware/session"
+	"github.com/foxiswho/echo-go/middleware/session"
 
-	"github.com/foxiswho/shop-go/module/cache"
-	"github.com/foxiswho/shop-go/module/log"
-	"github.com/foxiswho/shop-go/service/user_service/auth"
-	userService "github.com/foxiswho/shop-go/service/example_service"
+	"github.com/foxiswho/echo-go/module/cache"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/service/user_service/auth"
+	userService "github.com/foxiswho/echo-go/service/example_service"
 	"github.com/labstack/echo"
 	"github.com/dgrijalva/jwt-go"
 	"fmt"

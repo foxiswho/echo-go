@@ -1,7 +1,7 @@
 package rbac
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 )
 
 func IndexHandler(c *base.BaseContext) error {

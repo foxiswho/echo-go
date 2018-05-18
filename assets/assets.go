@@ -56,7 +56,7 @@ type asset struct {
 
 // assetsCssBootstrapCombinedMinCss reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapCombinedMinCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap-combined.min.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap-combined.min.css"
 	name := "assets/css/bootstrap-combined.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -74,7 +74,7 @@ func assetsCssBootstrapCombinedMinCss() (*asset, error) {
 
 // assetsCssBootstrapThemeCss reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapThemeCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap-theme.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap-theme.css"
 	name := "assets/css/bootstrap-theme.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -92,7 +92,7 @@ func assetsCssBootstrapThemeCss() (*asset, error) {
 
 // assetsCssBootstrapThemeCssMap reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapThemeCssMap() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap-theme.css.map"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap-theme.css.map"
 	name := "assets/css/bootstrap-theme.css.map"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -110,7 +110,7 @@ func assetsCssBootstrapThemeCssMap() (*asset, error) {
 
 // assetsCssBootstrapThemeMinCss reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapThemeMinCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap-theme.min.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap-theme.min.css"
 	name := "assets/css/bootstrap-theme.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -128,7 +128,7 @@ func assetsCssBootstrapThemeMinCss() (*asset, error) {
 
 // assetsCssBootstrapCss reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap.css"
 	name := "assets/css/bootstrap.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -146,7 +146,7 @@ func assetsCssBootstrapCss() (*asset, error) {
 
 // assetsCssBootstrapCssMap reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapCssMap() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap.css.map"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap.css.map"
 	name := "assets/css/bootstrap.css.map"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -164,7 +164,7 @@ func assetsCssBootstrapCssMap() (*asset, error) {
 
 // assetsCssBootstrapMinCss reads file data from disk. It returns an error on failure.
 func assetsCssBootstrapMinCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/bootstrap.min.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/bootstrap.min.css"
 	name := "assets/css/bootstrap.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -182,7 +182,7 @@ func assetsCssBootstrapMinCss() (*asset, error) {
 
 // assetsCssJqueryTreetableCss reads file data from disk. It returns an error on failure.
 func assetsCssJqueryTreetableCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/jquery.treetable.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/jquery.treetable.css"
 	name := "assets/css/jquery.treetable.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -200,7 +200,7 @@ func assetsCssJqueryTreetableCss() (*asset, error) {
 
 // assetsCssJqueryTreetableThemeDefaultCss reads file data from disk. It returns an error on failure.
 func assetsCssJqueryTreetableThemeDefaultCss() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/css/jquery.treetable.theme.default.css"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/css/jquery.treetable.theme.default.css"
 	name := "assets/css/jquery.treetable.theme.default.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -218,7 +218,7 @@ func assetsCssJqueryTreetableThemeDefaultCss() (*asset, error) {
 
 // assetsFontsGlyphiconsHalflingsRegularEot reads file data from disk. It returns an error on failure.
 func assetsFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/fonts/glyphicons-halflings-regular.eot"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/fonts/glyphicons-halflings-regular.eot"
 	name := "assets/fonts/glyphicons-halflings-regular.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -236,7 +236,7 @@ func assetsFontsGlyphiconsHalflingsRegularEot() (*asset, error) {
 
 // assetsFontsGlyphiconsHalflingsRegularSvg reads file data from disk. It returns an error on failure.
 func assetsFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/fonts/glyphicons-halflings-regular.svg"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/fonts/glyphicons-halflings-regular.svg"
 	name := "assets/fonts/glyphicons-halflings-regular.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -254,7 +254,7 @@ func assetsFontsGlyphiconsHalflingsRegularSvg() (*asset, error) {
 
 // assetsFontsGlyphiconsHalflingsRegularTtf reads file data from disk. It returns an error on failure.
 func assetsFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/fonts/glyphicons-halflings-regular.ttf"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/fonts/glyphicons-halflings-regular.ttf"
 	name := "assets/fonts/glyphicons-halflings-regular.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -272,7 +272,7 @@ func assetsFontsGlyphiconsHalflingsRegularTtf() (*asset, error) {
 
 // assetsFontsGlyphiconsHalflingsRegularWoff reads file data from disk. It returns an error on failure.
 func assetsFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/fonts/glyphicons-halflings-regular.woff"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/fonts/glyphicons-halflings-regular.woff"
 	name := "assets/fonts/glyphicons-halflings-regular.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -290,7 +290,7 @@ func assetsFontsGlyphiconsHalflingsRegularWoff() (*asset, error) {
 
 // assetsFontsGlyphiconsHalflingsRegularWoff2 reads file data from disk. It returns an error on failure.
 func assetsFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/fonts/glyphicons-halflings-regular.woff2"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/fonts/glyphicons-halflings-regular.woff2"
 	name := "assets/fonts/glyphicons-halflings-regular.woff2"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -308,7 +308,7 @@ func assetsFontsGlyphiconsHalflingsRegularWoff2() (*asset, error) {
 
 // assetsImgFaviconIco reads file data from disk. It returns an error on failure.
 func assetsImgFaviconIco() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/img/favicon.ico"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/img/favicon.ico"
 	name := "assets/img/favicon.ico"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -326,7 +326,7 @@ func assetsImgFaviconIco() (*asset, error) {
 
 // assetsImgIcon_brandPng reads file data from disk. It returns an error on failure.
 func assetsImgIcon_brandPng() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/img/icon_brand.png"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/img/icon_brand.png"
 	name := "assets/img/icon_brand.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -344,7 +344,7 @@ func assetsImgIcon_brandPng() (*asset, error) {
 
 // assetsJsAppJwtJwtJs reads file data from disk. It returns an error on failure.
 func assetsJsAppJwtJwtJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/app/jwt/jwt.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/app/jwt/jwt.js"
 	name := "assets/js/app/jwt/jwt.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -362,7 +362,7 @@ func assetsJsAppJwtJwtJs() (*asset, error) {
 
 // assetsJsAppTreetableTreetablePageJs reads file data from disk. It returns an error on failure.
 func assetsJsAppTreetableTreetablePageJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/app/treetable/treetable-page.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/app/treetable/treetable-page.js"
 	name := "assets/js/app/treetable/treetable-page.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -380,7 +380,7 @@ func assetsJsAppTreetableTreetablePageJs() (*asset, error) {
 
 // assetsJsLibBootstrapBootstrapJs reads file data from disk. It returns an error on failure.
 func assetsJsLibBootstrapBootstrapJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/bootstrap/bootstrap.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/bootstrap/bootstrap.js"
 	name := "assets/js/lib/bootstrap/bootstrap.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -398,7 +398,7 @@ func assetsJsLibBootstrapBootstrapJs() (*asset, error) {
 
 // assetsJsLibBootstrapBootstrapMinJs reads file data from disk. It returns an error on failure.
 func assetsJsLibBootstrapBootstrapMinJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/bootstrap/bootstrap.min.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/bootstrap/bootstrap.min.js"
 	name := "assets/js/lib/bootstrap/bootstrap.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -416,7 +416,7 @@ func assetsJsLibBootstrapBootstrapMinJs() (*asset, error) {
 
 // assetsJsLibBootstrapNpmJs reads file data from disk. It returns an error on failure.
 func assetsJsLibBootstrapNpmJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/bootstrap/npm.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/bootstrap/npm.js"
 	name := "assets/js/lib/bootstrap/npm.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -434,7 +434,7 @@ func assetsJsLibBootstrapNpmJs() (*asset, error) {
 
 // assetsJsLibJqueryJquery213Js reads file data from disk. It returns an error on failure.
 func assetsJsLibJqueryJquery213Js() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/jquery/jquery-2.1.3.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/jquery/jquery-2.1.3.js"
 	name := "assets/js/lib/jquery/jquery-2.1.3.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -452,7 +452,7 @@ func assetsJsLibJqueryJquery213Js() (*asset, error) {
 
 // assetsJsLibJqueryJquery213MinJs reads file data from disk. It returns an error on failure.
 func assetsJsLibJqueryJquery213MinJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/jquery/jquery-2.1.3.min.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/jquery/jquery-2.1.3.min.js"
 	name := "assets/js/lib/jquery/jquery-2.1.3.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -470,7 +470,7 @@ func assetsJsLibJqueryJquery213MinJs() (*asset, error) {
 
 // assetsJsLibJqueryFormJqueryForm351Js reads file data from disk. It returns an error on failure.
 func assetsJsLibJqueryFormJqueryForm351Js() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/jquery-form/jquery.form.3.51.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/jquery-form/jquery.form.3.51.js"
 	name := "assets/js/lib/jquery-form/jquery.form.3.51.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -488,7 +488,7 @@ func assetsJsLibJqueryFormJqueryForm351Js() (*asset, error) {
 
 // assetsJsLibJqueryTreetableJqueryTreetableJs reads file data from disk. It returns an error on failure.
 func assetsJsLibJqueryTreetableJqueryTreetableJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/jquery-treetable/jquery.treetable.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/jquery-treetable/jquery.treetable.js"
 	name := "assets/js/lib/jquery-treetable/jquery.treetable.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -506,7 +506,7 @@ func assetsJsLibJqueryTreetableJqueryTreetableJs() (*asset, error) {
 
 // assetsJsLibRequireSetupJs reads file data from disk. It returns an error on failure.
 func assetsJsLibRequireSetupJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/require-setup.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/require-setup.js"
 	name := "assets/js/lib/require-setup.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -524,7 +524,7 @@ func assetsJsLibRequireSetupJs() (*asset, error) {
 
 // assetsJsLibRequireJs reads file data from disk. It returns an error on failure.
 func assetsJsLibRequireJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/lib/require.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/lib/require.js"
 	name := "assets/js/lib/require.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -542,7 +542,7 @@ func assetsJsLibRequireJs() (*asset, error) {
 
 // assetsJsToolsRJs reads file data from disk. It returns an error on failure.
 func assetsJsToolsRJs() (*asset, error) {
-	path := "/Users/fox/go/mypath/src/github.com/foxiswho/shop-go/assets/js/tools/r.js"
+	path := "/Users/fox/go/mypath/src/github.com/foxiswho/echo-go/assets/js/tools/r.js"
 	name := "assets/js/tools/r.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {

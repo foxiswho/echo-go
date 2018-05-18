@@ -2,7 +2,7 @@ package conv
 
 import (
 	"encoding/json"
-	"github.com/foxiswho/shop-go/util"
+	"github.com/foxiswho/echo-go/util"
 )
 
 //JSON格式数据转换为map

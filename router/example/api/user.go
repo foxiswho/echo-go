@@ -9,7 +9,7 @@ import (
 	"github.com/labstack/echo"
 	// "github.com/jinzhu/gorm"
 
-	userService "github.com/foxiswho/shop-go/service/example_service"
+	userService "github.com/foxiswho/echo-go/service/example_service"
 )
 
 func UserHandler(c echo.Context) error {

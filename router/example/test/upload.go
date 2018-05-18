@@ -1,14 +1,14 @@
 package test
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 	"os"
 	"io"
 	"net/http"
 	"fmt"
-	"github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/module/file"
-	"github.com/foxiswho/shop-go/util/conv"
+	"github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/module/file"
+	"github.com/foxiswho/echo-go/util/conv"
 )
 
 type Upload struct {

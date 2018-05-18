@@ -2,10 +2,10 @@ package file
 
 import (
 	"encoding/base64"
-	"github.com/foxiswho/shop-go/util/conv"
-	"github.com/foxiswho/shop-go/util/crypt"
-	"github.com/foxiswho/shop-go/util"
-	"github.com/foxiswho/shop-go/conf"
+	"github.com/foxiswho/echo-go/util/conv"
+	"github.com/foxiswho/echo-go/util/crypt"
+	"github.com/foxiswho/echo-go/util"
+	"github.com/foxiswho/echo-go/conf"
 )
 
 //令牌生成

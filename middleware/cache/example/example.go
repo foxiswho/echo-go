@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/foxiswho/shop-go/middleware/cache"
+	"github.com/foxiswho/echo-go/middleware/cache"
 	"github.com/labstack/echo"
 	"time"
 )

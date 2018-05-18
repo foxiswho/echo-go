@@ -2,7 +2,7 @@ package api
 
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 	"time"
 	"math/rand"
 	"net/http"

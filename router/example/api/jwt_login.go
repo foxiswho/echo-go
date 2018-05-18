@@ -5,12 +5,12 @@ import (
 	"time"
 	"net/http"
 	"github.com/labstack/echo"
-	"github.com/foxiswho/shop-go/router/base"
+	"github.com/foxiswho/echo-go/router/base"
 	"fmt"
-	"github.com/foxiswho/shop-go/router/example/test"
-	"github.com/foxiswho/shop-go/service/example_service"
-	"github.com/foxiswho/shop-go/module/log"
-	"github.com/foxiswho/shop-go/conf"
+	"github.com/foxiswho/echo-go/router/example/test"
+	"github.com/foxiswho/echo-go/service/example_service"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/conf"
 )
 
 // jwtCustomClaims are custom claims extending default ones.

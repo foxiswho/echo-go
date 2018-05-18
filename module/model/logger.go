@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/foxiswho/shop-go/module/log"
+	"github.com/foxiswho/echo-go/module/log"
 )
 
 type Logger struct {

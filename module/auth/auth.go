@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/foxiswho/shop-go/middleware/session"
+	"github.com/foxiswho/echo-go/middleware/session"
 	"github.com/labstack/echo"
 )
 
 const (
-	DefaultKey  = "github.com/foxiswho/shop-go/modules/auth"
+	DefaultKey  = "github.com/foxiswho/echo-go/modules/auth"
 	errorFormat = "[modules] ERROR! %s\n"
 )
 

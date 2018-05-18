@@ -4,7 +4,7 @@ import (
 	"github.com/labstack/echo"
 	"golang.org/x/net/websocket"
 
-	"github.com/foxiswho/shop-go/module/log"
+	"github.com/foxiswho/echo-go/module/log"
 )
 
 func socketHandler(c echo.Context) error {

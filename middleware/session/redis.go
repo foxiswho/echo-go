@@ -3,7 +3,7 @@ package session
 import (
 	"time"
 
-	"github.com/foxiswho/shop-go/middleware/session/redistore"
+	"github.com/foxiswho/echo-go/middleware/session/redistore"
 	"github.com/gorilla/sessions"
 	"github.com/gomodule/redigo/redis"
 )

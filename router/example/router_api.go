@@ -4,12 +4,12 @@ import (
 
 	"github.com/labstack/echo"
 	mw "github.com/labstack/echo/middleware"
-	"github.com/foxiswho/shop-go/module/session"
-	. "github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/middleware/opentracing"
-	"github.com/foxiswho/shop-go/module/cache"
-	"github.com/foxiswho/shop-go/router/base"
-	"github.com/foxiswho/shop-go/router/example/api"
+	"github.com/foxiswho/echo-go/module/session"
+	. "github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/middleware/opentracing"
+	"github.com/foxiswho/echo-go/module/cache"
+	"github.com/foxiswho/echo-go/router/base"
+	"github.com/foxiswho/echo-go/router/example/api"
 	"net/http"
 )
 

@@ -10,14 +10,14 @@ import (
 
 	"github.com/labstack/echo"
 
-	"github.com/foxiswho/shop-go/middleware/multitemplate"
-	"github.com/foxiswho/shop-go/middleware/pongo2echo"
-	"github.com/foxiswho/shop-go/middleware/session"
+	"github.com/foxiswho/echo-go/middleware/multitemplate"
+	"github.com/foxiswho/echo-go/middleware/pongo2echo"
+	"github.com/foxiswho/echo-go/middleware/session"
 
-	. "github.com/foxiswho/shop-go/conf"
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/module/log"
-	MT "github.com/foxiswho/shop-go/template"
+	. "github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/log"
+	MT "github.com/foxiswho/echo-go/template"
 )
 
 func Render() echo.MiddlewareFunc {

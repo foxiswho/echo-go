@@ -1,13 +1,13 @@
 package design
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
-	"github.com/foxiswho/shop-go/module/db"
+	"github.com/foxiswho/echo-go/router/base"
+	"github.com/foxiswho/echo-go/module/db"
 	"fmt"
 	"text/template"
 	"os"
 	"strings"
-	"github.com/foxiswho/shop-go/conf"
+	"github.com/foxiswho/echo-go/conf"
 	"net/http"
 )
 

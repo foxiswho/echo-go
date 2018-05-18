@@ -3,17 +3,17 @@ package cache
 import (
 	"time"
 
-	ec "github.com/foxiswho/shop-go/middleware/cache"
+	ec "github.com/foxiswho/echo-go/middleware/cache"
 	"github.com/labstack/echo"
 
-	. "github.com/foxiswho/shop-go/conf"
+	. "github.com/foxiswho/echo-go/conf"
 )
 
 const (
 	DefaultExpiration = 3600
 	DEFAULT           = time.Duration(0)
 	FOREVER           = time.Duration(-1)
-	DefaultKey        = "github.com/foxiswho/shop-go/modules/cache"
+	DefaultKey        = "github.com/foxiswho/echo-go/modules/cache"
 )
 
 func Cache() echo.MiddlewareFunc {

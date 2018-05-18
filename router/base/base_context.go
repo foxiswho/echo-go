@@ -3,12 +3,12 @@ package base
 import (
 	"github.com/labstack/echo"
 
-	"github.com/foxiswho/shop-go/middleware/session"
+	"github.com/foxiswho/echo-go/middleware/session"
 
 	"github.com/opentracing/opentracing-go"
-	"github.com/foxiswho/shop-go/module/auth"
-	"github.com/foxiswho/shop-go/util/json"
-	ot "github.com/foxiswho/shop-go/middleware/opentracing"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/util/json"
+	ot "github.com/foxiswho/echo-go/middleware/opentracing"
 	"net/http"
 	"fmt"
 )

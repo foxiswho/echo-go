@@ -22,7 +22,7 @@ import (
 	"github.com/casbin/casbin/model"
 	"github.com/casbin/casbin/persist"
 	"github.com/lib/pq"
-	"github.com/foxiswho/shop-go/module/db"
+	"github.com/foxiswho/echo-go/module/db"
 )
 
 type CasbinRule struct {

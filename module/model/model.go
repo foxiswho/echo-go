@@ -3,7 +3,7 @@ package model
 import (
 	"github.com/opentracing/opentracing-go"
 
-	"github.com/foxiswho/shop-go/module/log"
+	"github.com/foxiswho/echo-go/module/log"
 )
 
 type Model struct {

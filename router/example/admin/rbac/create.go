@@ -1,8 +1,8 @@
 package rbac
 
 import (
-	"github.com/foxiswho/shop-go/router/base"
-	"github.com/foxiswho/shop-go/middleware/authadapter"
+	"github.com/foxiswho/echo-go/router/base"
+	"github.com/foxiswho/echo-go/middleware/authadapter"
 	"github.com/casbin/casbin"
 	"fmt"
 )

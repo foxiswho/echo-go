@@ -1,4 +1,4 @@
-package: github.com/foxiswho/shop-go
+package: github.com/foxiswho/echo-go
 import:
 - package: github.com/BurntSushi/toml
   version: ~0.3.0
