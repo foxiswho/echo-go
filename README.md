@@ -222,13 +222,13 @@ util            公共工具
 
 功能 | 描述
 :--- | :---
-[配置](https://github.com/foxiswho/echo-go/tree/master/conf) | [toml](http://github.com/BurntSushi/toml)配置文件
+[配置](https://github.com/foxiswho/echo-go/tree/master/conf) | [toml](https://github.com/BurntSushi/toml)配置文件
 [子域名部署](https://github.com/foxiswho/echo-go/blob/master/router/router.go) | 子域名区分模块
 [缓存](https://github.com/foxiswho/echo-go/blob/master/module/cache) | Redis、Memcached、Memory
 [Session](https://github.com/foxiswho/echo-go/blob/master/module/session) | Redis、File、Cookie，支持Flash
-[ORM](https://github.com/foxiswho/echo-go/tree/master/module/db) | Fork [xorm]( github.com/go-xorm/xorm)
-[权限](https://github.com/foxiswho/echo-go/blob/master/middleware/auth) |  Fork [casbin]( github.com/casbin/casbin)
-[模板](https://github.com/foxiswho/echo-go/tree/master/module/render) | 支持html/template、[pongo2](http://github.com/flosch/pongo2)，模板支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
+[ORM](https://github.com/foxiswho/echo-go/tree/master/module/db) | Fork [xorm](https://github.com/go-xorm/xorm)
+[权限](https://github.com/foxiswho/echo-go/blob/master/middleware/auth) |  Fork [casbin](https://github.com/casbin/casbin)
+[模板](https://github.com/foxiswho/echo-go/tree/master/module/render) | 支持html/template、[pongo2](https://github.com/flosch/pongo2)，模板支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
 静态 | 静态资源，支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
 安全 | CORS、CSRF、XSS、HSTS、验证码等
 [OpenTracing](http://opentracing.io/) | Tracer支持Jaeger、Appdash，在Request、ORM层做跟踪，可在conf配置开启)
