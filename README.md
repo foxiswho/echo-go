@@ -14,7 +14,7 @@ RBAC权限,JWT、Socket,session,cookie,缓存,登录,注册,上传,db数据库�
 - go1.8+
 - Echo V3
 
-> [在线演示](http://echo.www.foxwho.com/)
+> [在线演示](http://echo.www.foxwho.com/)  暂未配置，待上线中
 
 注意：如果要案例运行全部正确，请设置域名或本地域名映射
 
