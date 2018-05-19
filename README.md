@@ -226,7 +226,7 @@ util            公共工具
 [子域名部署](https://github.com/foxiswho/echo-go/blob/master/router/router.go) | 子域名区分模块
 [缓存](https://github.com/foxiswho/echo-go/blob/master/module/cache) | Redis、Memcached、Memory
 [Session](https://github.com/foxiswho/echo-go/blob/master/module/session) | Redis、File、Cookie，支持Flash
-[ORM](https://github.com/foxiswho/echo-go/tree/master/module/db) | Fork [xorm](https://github.com/go-xorm/xorm)
+[ORM](https://github.com/foxiswho/echo-go/tree/master/module/db) | Fork [xorm](https://github.com/go-xorm/xorm)   [xormplus](https://github.com/xormplus/xorm)
 [权限](https://github.com/foxiswho/echo-go/blob/master/middleware/auth) |  Fork [casbin](https://github.com/casbin/casbin)
 [模板](https://github.com/foxiswho/echo-go/tree/master/module/render) | 支持html/template、[pongo2](https://github.com/flosch/pongo2)，模板支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
 静态 | 静态资源，支持打包[bindata](https://github.com/jteeuwen/go-bindata#installation)
