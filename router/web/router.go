@@ -19,6 +19,7 @@ import (
 	web_index "github.com/foxiswho/echo-go/router/web/index"
 	web_test "github.com/foxiswho/echo-go/router/example/test"
 	example_admin "github.com/foxiswho/echo-go/router/example/admin"
+	example_goods "github.com/foxiswho/echo-go/router/example/admin/goods"
 	"github.com/foxiswho/echo-go/router/base"
 	"github.com/foxiswho/echo-go/router/example/api"
 	"github.com/foxiswho/echo-go/middleware/authadapter"
@@ -166,7 +167,7 @@ func Routers() *echo.Echo {
 			//数据库驱动
 			a := authadapter.NewAdapter("mysql", "")
 			//加载 过滤条件
-			ce := casbin.NewEnforcer("template/casbin/rbac_model.conf",a)
+			ce := casbin.NewEnforcer("template/casbin/rbac_model.conf", a)
 			//从数据库加载到内存中
 			ce.LoadPolicy()
 			//中间件
@@ -178,6 +179,11 @@ func Routers() *echo.Echo {
 		{
 			//根据数据库生成 service
 			des.GET("/service", base.Handler(design.ServiceMakeHandler))
+		}
+		//
+		goods := admin.Group("/goods")
+		{
+			goods.GET("/create", base.Handler(example_goods.CreateHandler))
 		}
 	}
 	return e
