@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func CreateGoodsTest() {
+func CreateGoodsxxxxxx() {
 	create := NewCreate()
 	create.Goods.Title = "德国Aptamil爱他美婴幼儿配方奶粉1+段(适合1岁以上宝宝)600g"
 	create.Goods.Model = "1+段 600g"
