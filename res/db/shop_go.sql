@@ -11,7 +11,7 @@
  Target Server Version : 50721
  File Encoding         : 65001
 
- Date: 18/05/2018 17:10:20
+ Date: 20/05/2018 21:50:32
 */
 
 SET NAMES utf8mb4;
@@ -234,7 +234,7 @@ CREATE TABLE `cart` (
   `uid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
   `goods_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品ID',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品信息id',
-  `num` bigint(10) unsigned NOT NULL DEFAULT '0' COMMENT '数量',
+  `num` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '数量',
   `price` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '单价',
   `amount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '合计总价',
   `warehouse_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '仓库ID',
@@ -320,8 +320,9 @@ CREATE TABLE `goods` (
   `attr_type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '属性类别ID',
   `num_unit` int(11) unsigned NOT NULL DEFAULT '1' COMMENT '每个单位内多少个，每盒几罐',
   `type_stock` int(10) NOT NULL DEFAULT '0' COMMENT '是否仓库库存',
-  `type_id` int(11) NOT NULL DEFAULT '10001' COMMENT '类别类目10001默认10002直邮10003现货10004一般贸易',
+  `type_id` int(11) NOT NULL DEFAULT '10001' COMMENT '类别类目',
   `mark` char(32) NOT NULL DEFAULT '' COMMENT '标志:产品-仓库-供应商',
+  `mark_id` int(11) NOT NULL DEFAULT '10001' COMMENT '标志类别',
   `is_combined` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否商品组合',
   `description` varchar(255) DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE,
@@ -333,8 +334,16 @@ CREATE TABLE `goods` (
   KEY `status` (`status`),
   KEY `is_del` (`is_del`),
   KEY `sid` (`sid`),
-  KEY `mark` (`mark`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品发布';
+  KEY `mark` (`mark`),
+  KEY `mark_id` (`mark_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4 COMMENT='商品发布';
+
+-- ----------------------------
+-- Records of goods
+-- ----------------------------
+BEGIN;
+INSERT INTO `goods` VALUES (1002, 1, 1, 1, 99, 0, 1, 0, 1, 1, '德国Aptamil爱他美婴幼儿配方奶粉1+段(适合1岁以上宝宝)600g', '1+段 600g', 'A000001', '', '', 0, 0, 0, 0, 1, 0, 202001, '𱄩-Ϫ', 201001, 0, '');
+COMMIT;
 
 -- ----------------------------
 -- Table structure for goods_brand
@@ -410,7 +419,14 @@ CREATE TABLE `goods_content` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注紧供自己查看',
   `title_other` varchar(5000) DEFAULT NULL COMMENT '其他名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品内容';
+) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4 COMMENT='商品内容';
+
+-- ----------------------------
+-- Records of goods_content
+-- ----------------------------
+BEGIN;
+INSERT INTO `goods_content` VALUES (1002, '', '', '', '内容', '', '');
+COMMIT;
 
 -- ----------------------------
 -- Table structure for goods_price
@@ -418,23 +434,30 @@ CREATE TABLE `goods_content` (
 DROP TABLE IF EXISTS `goods_price`;
 CREATE TABLE `goods_price` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `price_market` bigint(12) unsigned NOT NULL DEFAULT '0' COMMENT '市场价',
-  `price_shop` bigint(12) unsigned NOT NULL DEFAULT '0' COMMENT '商城价',
+  `price_market` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '市场价',
+  `price_shop` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商城价',
   `is_promote` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否促销1是0否',
-  `promote_price` int(12) unsigned NOT NULL DEFAULT '0' COMMENT '促销价格',
+  `promote_price` int(20) unsigned NOT NULL DEFAULT '0' COMMENT '促销价格',
   `promote_start_date` timestamp NULL DEFAULT NULL COMMENT '促销开始日期',
   `promote_end_date` timestamp NULL DEFAULT NULL COMMENT '促销结束日期',
   `is_free_shipping` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否包邮1是0否',
   `start_date` timestamp NULL DEFAULT NULL COMMENT '开始时间',
   `end_date` timestamp NULL DEFAULT NULL COMMENT '结束时间',
   `min_free_shipping` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '最小包邮数量',
-  `num_max` varchar(255) NOT NULL DEFAULT '9999' COMMENT '最大可一次购买数量',
+  `num_max` int(11) NOT NULL DEFAULT '9999' COMMENT '最大可一次购买数量',
   `num_least` int(11) NOT NULL DEFAULT '1' COMMENT '最少购买数量',
   `is_free_tax` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否包税使用包税价格',
-  `is_group_price` decimal(10,0) DEFAULT '1' COMMENT '是否使用用户组价格',
-  `tax_price` bigint(12) NOT NULL DEFAULT '0' COMMENT '包税价格',
+  `is_group_price` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否使用用户组价格',
+  `tax_price` bigint(20) NOT NULL DEFAULT '0' COMMENT '包税价格',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of goods_price
+-- ----------------------------
+BEGIN;
+INSERT INTO `goods_price` VALUES (1002, 1400000, 1200000, 0, 0, NULL, NULL, 0, NULL, NULL, 0, 999, 1, 0, 0, 0);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for goods_statistics
@@ -591,13 +614,13 @@ CREATE TABLE `order` (
   `type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '类别,1普通订单;',
   `type_id_admin` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '类别,1普通订单;后台设置',
   `type_id_sub` int(11) NOT NULL DEFAULT '0' COMMENT '其他类别',
-  `vat_fee` int(10) NOT NULL DEFAULT '0' COMMENT '增值税费',
-  `sales_fee` int(10) NOT NULL DEFAULT '0' COMMENT '消费税',
+  `vat_fee` bigint(20) NOT NULL DEFAULT '0' COMMENT '增值税费',
+  `sales_fee` bigint(20) NOT NULL DEFAULT '0' COMMENT '消费税',
   `amount_freight` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '物流费用',
   `amount_discount` bigint(20) NOT NULL DEFAULT '0' COMMENT '折扣金额',
   `amount_goods` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商品总金额',
   `amount_other` bigint(20) NOT NULL COMMENT '其他价格费用',
-  `amount_tax` int(10) NOT NULL DEFAULT '0' COMMENT '税费',
+  `amount_tax` bigint(20) NOT NULL DEFAULT '0' COMMENT '税费',
   `amount_order` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '订单总额',
   `amount_payment` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '支付总额,已付款金额(实际付款金额)',
   `total` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '总数量',
@@ -711,6 +734,68 @@ CREATE TABLE `order_ext` (
   `packing_id` int(10) DEFAULT '0' COMMENT '包装ID',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='扩展订单信息';
+
+-- ----------------------------
+-- Table structure for order_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `order_goods`;
+CREATE TABLE `order_goods` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '订单ID',
+  `goods_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品ID',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品信息id',
+  `title` varchar(200) DEFAULT NULL COMMENT '商品名称',
+  `num` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '数量',
+  `number` char(100) DEFAULT NULL COMMENT '商品编号',
+  `price` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '单价',
+  `num_unit` int(11) NOT NULL DEFAULT '1' COMMENT '每个单位内多少个，每盒几罐',
+  `num_total` int(11) NOT NULL DEFAULT '0' COMMENT '总数量 = 罐数x页面数量',
+  `amount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '合计总价',
+  `freight` int(11) NOT NULL DEFAULT '0' COMMENT '运费',
+  `warehouse_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '仓库ID',
+  `sid` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '商家ID',
+  `sales_fee` bigint(20) NOT NULL DEFAULT '0' COMMENT '消费税费',
+  `vat_fee` bigint(20) NOT NULL DEFAULT '0' COMMENT '增值税费',
+  `price_tax` bigint(20) NOT NULL DEFAULT '0' COMMENT '总税费',
+  `remark` text COMMENT '备注',
+  `price_shop` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商城价',
+  `cost_price` bigint(20) NOT NULL DEFAULT '0' COMMENT '成本单价',
+  `cost_amount` bigint(20) NOT NULL DEFAULT '0' COMMENT '成本金额',
+  `mark_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品标志ID',
+  PRIMARY KEY (`id`),
+  KEY `sales_id` (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单商品';
+
+-- ----------------------------
+-- Table structure for order_goods_structure
+-- ----------------------------
+DROP TABLE IF EXISTS `order_goods_structure`;
+CREATE TABLE `order_goods_structure` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '订单ID',
+  `goods_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品ID',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品信息id',
+  `title` varchar(200) DEFAULT NULL COMMENT '商品名称',
+  `num` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '数量',
+  `number` char(100) DEFAULT NULL COMMENT '商品编号',
+  `price` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '单价',
+  `num_unit` int(11) NOT NULL DEFAULT '1' COMMENT '每个单位内多少个，每盒几罐',
+  `num_total` int(11) NOT NULL DEFAULT '0' COMMENT '总数量 = 罐数x页面数量',
+  `amount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '合计总价',
+  `freight` bigint(20) NOT NULL DEFAULT '0' COMMENT '运费',
+  `warehouse_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '仓库ID',
+  `sid` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '商家ID',
+  `sales_fee` bigint(11) NOT NULL DEFAULT '0' COMMENT '消费税费',
+  `vat_fee` bigint(10) NOT NULL DEFAULT '0' COMMENT '增值税费',
+  `price_tax` bigint(10) NOT NULL DEFAULT '0' COMMENT '总税费',
+  `remark` text COMMENT '备注',
+  `price_shop` bigint(12) unsigned DEFAULT '0' COMMENT '商城价',
+  `cost_price` bigint(11) NOT NULL DEFAULT '0' COMMENT '成本单价',
+  `cost_amount` bigint(20) NOT NULL DEFAULT '0' COMMENT '成本金额',
+  `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '所属组合商品ID',
+  PRIMARY KEY (`id`),
+  KEY `sales_id` (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单商品';
 
 -- ----------------------------
 -- Table structure for session
