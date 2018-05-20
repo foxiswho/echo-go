@@ -25,10 +25,10 @@ const (
 type OrderType int
 
 const (
-	Order_Type_Id_Normal       OrderType = 102001 //普通订单
-	Order_Type_Id_Direct_Mail  OrderType = 102002 //直邮
-	Order_Type_Id_stock        OrderType = 102003 //现货
-	Order_Type_Id_quick_order  OrderType = 102010 //快速下单
-	Order_Type_Id_import_order OrderType = 102011 //导入下单
-	Order_Type_Id_2b           OrderType = 102100 //批量b2b订单
+	Order_Type_Id_Normal         OrderType = 102001 //普通订单
+	Order_Type_Id_Direct_Mail    OrderType = 102002 //直邮
+	Order_Type_Id_goods_in_stock OrderType = 102003 //现货
+	Order_Type_Id_quick_order    OrderType = 102010 //快速下单
+	Order_Type_Id_import_order   OrderType = 102011 //导入下单
+	Order_Type_Id_2b             OrderType = 102100 //批量b2b订单
 )
