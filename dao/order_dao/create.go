@@ -4,6 +4,7 @@ import (
 	"github.com/foxiswho/echo-go/models"
 	"github.com/foxiswho/echo-go/module/db"
 	"github.com/foxiswho/echo-go/util"
+	"github.com/foxiswho/echo-go/module/log"
 )
 
 type CreateOrder struct {
@@ -16,11 +17,11 @@ func NewCreateOrder() *CreateOrder {
 
 func (s *CreateOrder) Process() (*models.Order, error) {
 	engine := db.DB().Engine
-	id, err := engine.InsertOne(s.Order)
+	affected, err := engine.InsertOne(s.Order)
 	if err != nil {
 		return nil, util.NewError("订单保存错误")
 	}
-	s.Order.Id = int(id)
+	log.Debugf("s.Order affected ", affected)
 	s.Consignee.Id = s.Order.Id
 	_, err = engine.InsertOne(s.Consignee)
 	if err != nil {
