@@ -22,9 +22,9 @@ type Goods struct {
 	AttrTypeId         int    `json:"attr_type_id" xorm:"not null default 0 comment('属性类别ID') INT(10)"`
 	NumUnit            int    `json:"num_unit" xorm:"not null default 1 comment('每个单位内多少个，每盒几罐') INT(11)"`
 	TypeStock          int    `json:"type_stock" xorm:"not null default 0 comment('是否仓库库存') INT(10)"`
-	TypeId             int    `json:"type_id" xorm:"not null default 10001 comment('类别类目10001默认10002直邮10003现货10004一般贸易') INT(11)"`
-	MarkId             int    `json:"mark_id" xorm:"not null default '0' comment('标志:类别') index INT(10)"`
+	TypeId             int    `json:"type_id" xorm:"not null default 10001 comment('类别类目') INT(11)"`
 	Mark               string `json:"mark" xorm:"not null default '' comment('标志:产品-仓库-供应商') index CHAR(32)"`
+	MarkId             int    `json:"mark_id" xorm:"not null default 10001 comment('标志类别') index INT(11)"`
 	IsCombined         int    `json:"is_combined" xorm:"not null default 0 comment('是否商品组合') TINYINT(4)"`
 	Description        string `json:"description" xorm:"comment('描述') VARCHAR(255)"`
 }

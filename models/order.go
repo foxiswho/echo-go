@@ -15,13 +15,13 @@ type Order struct {
 	TypeId         int       `json:"type_id" xorm:"not null default 0 comment('类别,1普通订单;') index INT(10)"`
 	TypeIdAdmin    int       `json:"type_id_admin" xorm:"not null default 0 comment('类别,1普通订单;后台设置') index INT(10)"`
 	TypeIdSub      int       `json:"type_id_sub" xorm:"not null default 0 comment('其他类别') INT(11)"`
-	VatFee         int       `json:"vat_fee" xorm:"not null default 0 comment('增值税费') INT(10)"`
-	SalesFee       int       `json:"sales_fee" xorm:"not null default 0 comment('消费税') INT(10)"`
+	VatFee         int64     `json:"vat_fee" xorm:"not null default 0 comment('增值税费') BIGINT(20)"`
+	SalesFee       int64     `json:"sales_fee" xorm:"not null default 0 comment('消费税') BIGINT(20)"`
 	AmountFreight  int64     `json:"amount_freight" xorm:"not null default 0 comment('物流费用') BIGINT(20)"`
 	AmountDiscount int64     `json:"amount_discount" xorm:"not null default 0 comment('折扣金额') BIGINT(20)"`
 	AmountGoods    int64     `json:"amount_goods" xorm:"not null default 0 comment('商品总金额') BIGINT(20)"`
 	AmountOther    int64     `json:"amount_other" xorm:"not null comment('其他价格费用') BIGINT(20)"`
-	AmountTax      int       `json:"amount_tax" xorm:"not null default 0 comment('税费') INT(10)"`
+	AmountTax      int64     `json:"amount_tax" xorm:"not null default 0 comment('税费') BIGINT(20)"`
 	AmountOrder    int64     `json:"amount_order" xorm:"not null default 0 comment('订单总额') BIGINT(20)"`
 	AmountPayment  int64     `json:"amount_payment" xorm:"not null default 0 comment('支付总额,已付款金额(实际付款金额)') BIGINT(20)"`
 	Total          int       `json:"total" xorm:"not null default 0 comment('总数量') INT(10)"`
