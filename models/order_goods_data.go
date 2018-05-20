@@ -5,7 +5,7 @@ type OrderGoodsData struct {
 	*Goods
 	*GoodsPrice
 	Num   int //	数量
-	Price int //	价格
+	Price int64 //	价格
 }
 
 //初始化

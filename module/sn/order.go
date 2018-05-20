@@ -1,7 +1,9 @@
 package sn
 
-import "github.com/foxiswho/echo-go/util/sn"
+import (
+	"github.com/foxiswho/echo-go/util/str"
+)
 
 func MakeOrderNo() string {
-	return sn.MakeYearDaysRand(12)
+	return str.MakeYearDaysRand(12)
 }

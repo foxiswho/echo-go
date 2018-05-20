@@ -7,11 +7,7 @@ import (
 )
 
 type CreateOrder struct {
-	Order               *models.Order
-	OrderExt            *models.OrderExt
-	Consignee           *models.OrderConsignee
-	OrderGoods          []*models.OrderGoods
-	OrderGoodsStructure []*models.OrderGoodsStructure
+	*models.OrderDate
 }
 
 func NewCreateOrder() *CreateOrder {
