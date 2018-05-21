@@ -44,14 +44,17 @@ func (s *CreateOrderFormat) Process() (*models.Order, error) {
 	if len(s.OrderGoodsData) == 0 {
 		return nil, util.NewError("商品数据不能为空")
 	}
+	//初始化
 	s.Options = newOptions()
 	s.create = models.NewOrderCollectDate()
 	s.create.Order = models.NewOrder()
 	s.create.OrderExt = models.NewOrderExt()
 	s.create.OrderConsignee = models.NewOrderConsignee()
+	//数据处理
 	s.processGoods()
 	s.processOrderData()
 	s.processOptions()
+	s.processAmount()
 	//
 	order_create := order_dao.NewCreateOrder()
 	order_create.SetOrderCollectDate(s.create)
@@ -89,6 +92,8 @@ func (s *CreateOrderFormat) processGoods() {
 		order_goods.PriceShop = goods.PriceShop
 		order_goods.Amount = int64(order_goods.Num) * order_goods.Price
 		OrderGoods[key] = order_goods
+		s.create.Order.AmountGoods += order_goods.Amount
+		////////////////////////////////
 		//组合商品数据 略,不处理组合商品
 		//
 		goods_structure := models.NewOrderGoodsStructure()
@@ -156,4 +161,13 @@ func (s *CreateOrderFormat) processOptions() {
 	if s.Options.OrderSn != "" {
 		s.create.Order.OrderSn = s.Options.OrderSn
 	}
+}
+
+//订单总价处理
+func (s *CreateOrderFormat) processAmount() {
+	s.create.Order.AmountOrder = 0
+	s.create.Order.AmountOrder += s.create.Order.AmountGoods
+	s.create.Order.AmountOrder += s.create.Order.AmountFreight
+	s.create.Order.AmountOrder += s.create.Order.AmountOther
+	s.create.Order.AmountPayment = s.create.Order.AmountOrder - s.create.Order.AmountDiscount
 }
