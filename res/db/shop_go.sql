@@ -1,24 +1,24 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 127.0.0.1
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50721
- Source Host           : localhost:3306
- Source Schema         : shop_go
+ Source Server Version : 50717
+ Source Host           : localhost
+ Source Database       : shop_go
 
  Target Server Type    : MySQL
- Target Server Version : 50721
- File Encoding         : 65001
+ Target Server Version : 50717
+ File Encoding         : utf-8
 
- Date: 20/05/2018 21:50:32
+ Date: 05/21/2018 17:18:33 PM
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for admin
+--  Table structure for `admin`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -51,14 +51,14 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='管理员表';
 
 -- ----------------------------
--- Records of admin
+--  Records of `admin`
 -- ----------------------------
 BEGIN;
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', NULL, NULL, '2018-05-18 10:04:57', '2018-05-18 10:04:57', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 1);
+INSERT INTO `admin` VALUES ('1', 'admin', 'admin', null, null, '2018-05-18 10:04:57', '2018-05-18 10:04:57', null, null, null, null, null, null, null, null, '0', '0', '0', '0', '0', '0', '1');
 COMMIT;
 
 -- ----------------------------
--- Table structure for admin_menu
+--  Table structure for `admin_menu`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_menu`;
 CREATE TABLE `admin_menu` (
@@ -82,7 +82,7 @@ CREATE TABLE `admin_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='菜单';
 
 -- ----------------------------
--- Table structure for admin_role_access
+--  Table structure for `admin_role_access`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role_access`;
 CREATE TABLE `admin_role_access` (
@@ -95,7 +95,7 @@ CREATE TABLE `admin_role_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='管理员与角色的关系、一个管理员可以有多个角色';
 
 -- ----------------------------
--- Table structure for admin_role_priv
+--  Table structure for `admin_role_priv`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role_priv`;
 CREATE TABLE `admin_role_priv` (
@@ -112,7 +112,7 @@ CREATE TABLE `admin_role_priv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='角色权限表';
 
 -- ----------------------------
--- Table structure for admin_status
+--  Table structure for `admin_status`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_status`;
 CREATE TABLE `admin_status` (
@@ -128,7 +128,7 @@ CREATE TABLE `admin_status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='状态';
 
 -- ----------------------------
--- Table structure for app
+--  Table structure for `app`
 -- ----------------------------
 DROP TABLE IF EXISTS `app`;
 CREATE TABLE `app` (
@@ -146,7 +146,7 @@ CREATE TABLE `app` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='应用';
 
 -- ----------------------------
--- Table structure for area
+--  Table structure for `area`
 -- ----------------------------
 DROP TABLE IF EXISTS `area`;
 CREATE TABLE `area` (
@@ -162,7 +162,7 @@ CREATE TABLE `area` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='地区表';
 
 -- ----------------------------
--- Table structure for area_ext
+--  Table structure for `area_ext`
 -- ----------------------------
 DROP TABLE IF EXISTS `area_ext`;
 CREATE TABLE `area_ext` (
@@ -181,7 +181,7 @@ CREATE TABLE `area_ext` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='地区扩展表';
 
 -- ----------------------------
--- Table structure for attachment
+--  Table structure for `attachment`
 -- ----------------------------
 DROP TABLE IF EXISTS `attachment`;
 CREATE TABLE `attachment` (
@@ -219,14 +219,14 @@ CREATE TABLE `attachment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='附件表';
 
 -- ----------------------------
--- Records of attachment
+--  Records of `attachment`
 -- ----------------------------
 BEGIN;
-INSERT INTO `attachment` VALUES (1, '', '', 1, '302b4f78f934cf4a06c5d8a9257ed97c.jpg', '9358d109b3de9c82bb32fd2d6081800a19d84338.jpg', '/uploads/image/2018-05/', 313768, 'jpg', 0, 0, 0, '2018-05-16 22:15:11', '', 0, '8444e2b2a9f99cae7a855a5f887dd3e2', '', 0, 1, 0, 0, '');
+INSERT INTO `attachment` VALUES ('1', '', '', '1', '302b4f78f934cf4a06c5d8a9257ed97c.jpg', '9358d109b3de9c82bb32fd2d6081800a19d84338.jpg', '/uploads/image/2018-05/', '313768', 'jpg', '0', '0', '0', '2018-05-16 22:15:11', '', '0', '8444e2b2a9f99cae7a855a5f887dd3e2', '', '0', '1', '0', '0', '');
 COMMIT;
 
 -- ----------------------------
--- Table structure for cart
+--  Table structure for `cart`
 -- ----------------------------
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
@@ -243,10 +243,10 @@ CREATE TABLE `cart` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='购物车';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='购物车';
 
 -- ----------------------------
--- Table structure for casbin_rule
+--  Table structure for `casbin_rule`
 -- ----------------------------
 DROP TABLE IF EXISTS `casbin_rule`;
 CREATE TABLE `casbin_rule` (
@@ -257,6 +257,8 @@ CREATE TABLE `casbin_rule` (
   `v3` varchar(100) DEFAULT NULL,
   `v4` varchar(100) DEFAULT NULL,
   `v5` varchar(100) DEFAULT NULL,
+  `id` int(1) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
   KEY `IDX_casbin_rule_p_type` (`p_type`),
   KEY `IDX_casbin_rule_v0` (`v0`),
   KEY `IDX_casbin_rule_v1` (`v1`),
@@ -264,18 +266,17 @@ CREATE TABLE `casbin_rule` (
   KEY `IDX_casbin_rule_v3` (`v3`),
   KEY `IDX_casbin_rule_v4` (`v4`),
   KEY `IDX_casbin_rule_v5` (`v5`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of casbin_rule
+--  Records of `casbin_rule`
 -- ----------------------------
 BEGIN;
-INSERT INTO `casbin_rule` VALUES ('p', '1', '/admin/rbac/index', 'GET', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '1', '/admin/rdbc/*', 'GET', '', '', '');
+INSERT INTO `casbin_rule` VALUES ('p', '1', '/admin/rbac/index', 'GET', '', '', '', '1'), ('p', '1', '/admin/rdbc/*', 'GET', '', '', '', '2');
 COMMIT;
 
 -- ----------------------------
--- Table structure for connect
+--  Table structure for `connect`
 -- ----------------------------
 DROP TABLE IF EXISTS `connect`;
 CREATE TABLE `connect` (
@@ -295,7 +296,7 @@ CREATE TABLE `connect` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='快捷登陆/qq';
 
 -- ----------------------------
--- Table structure for goods
+--  Table structure for `goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -336,17 +337,17 @@ CREATE TABLE `goods` (
   KEY `sid` (`sid`),
   KEY `mark` (`mark`),
   KEY `mark_id` (`mark_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4 COMMENT='商品发布';
+) ENGINE=InnoDB AUTO_INCREMENT=1003 DEFAULT CHARSET=utf8mb4 COMMENT='商品发布';
 
 -- ----------------------------
--- Records of goods
+--  Records of `goods`
 -- ----------------------------
 BEGIN;
-INSERT INTO `goods` VALUES (1002, 1, 1, 1, 99, 0, 1, 0, 1, 1, '德国Aptamil爱他美婴幼儿配方奶粉1+段(适合1岁以上宝宝)600g', '1+段 600g', 'A000001', '', '', 0, 0, 0, 0, 1, 0, 202001, '𱄩-Ϫ', 201001, 0, '');
+INSERT INTO `goods` VALUES ('1002', '1', '1', '1', '99', '0', '1', '0', '1', '1', '德国Aptamil爱他美婴幼儿配方奶粉1+段(适合1岁以上宝宝)600g', '1+段 600g', 'A000001', '', '', '0', '0', '0', '0', '1', '0', '202001', '201001-1-1-1', '201001', '0', '');
 COMMIT;
 
 -- ----------------------------
--- Table structure for goods_brand
+--  Table structure for `goods_brand`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_brand`;
 CREATE TABLE `goods_brand` (
@@ -370,7 +371,7 @@ CREATE TABLE `goods_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='品牌';
 
 -- ----------------------------
--- Table structure for goods_category
+--  Table structure for `goods_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_category`;
 CREATE TABLE `goods_category` (
@@ -391,7 +392,7 @@ CREATE TABLE `goods_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='栏目';
 
 -- ----------------------------
--- Table structure for goods_combined
+--  Table structure for `goods_combined`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_combined`;
 CREATE TABLE `goods_combined` (
@@ -407,7 +408,7 @@ CREATE TABLE `goods_combined` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组合商品';
 
 -- ----------------------------
--- Table structure for goods_content
+--  Table structure for `goods_content`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_content`;
 CREATE TABLE `goods_content` (
@@ -419,17 +420,17 @@ CREATE TABLE `goods_content` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注紧供自己查看',
   `title_other` varchar(5000) DEFAULT NULL COMMENT '其他名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4 COMMENT='商品内容';
+) ENGINE=InnoDB AUTO_INCREMENT=1003 DEFAULT CHARSET=utf8mb4 COMMENT='商品内容';
 
 -- ----------------------------
--- Records of goods_content
+--  Records of `goods_content`
 -- ----------------------------
 BEGIN;
-INSERT INTO `goods_content` VALUES (1002, '', '', '', '内容', '', '');
+INSERT INTO `goods_content` VALUES ('1002', '', '', '', '内容', '', '');
 COMMIT;
 
 -- ----------------------------
--- Table structure for goods_price
+--  Table structure for `goods_price`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_price`;
 CREATE TABLE `goods_price` (
@@ -450,17 +451,17 @@ CREATE TABLE `goods_price` (
   `is_group_price` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否使用用户组价格',
   `tax_price` bigint(20) NOT NULL DEFAULT '0' COMMENT '包税价格',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1003 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of goods_price
+--  Records of `goods_price`
 -- ----------------------------
 BEGIN;
-INSERT INTO `goods_price` VALUES (1002, 1400000, 1200000, 0, 0, NULL, NULL, 0, NULL, NULL, 0, 999, 1, 0, 0, 0);
+INSERT INTO `goods_price` VALUES ('1002', '1400000', '1200000', '0', '0', null, null, '0', null, null, '0', '999', '1', '0', '0', '0');
 COMMIT;
 
 -- ----------------------------
--- Table structure for goods_statistics
+--  Table structure for `goods_statistics`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_statistics`;
 CREATE TABLE `goods_statistics` (
@@ -471,7 +472,7 @@ CREATE TABLE `goods_statistics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品销量';
 
 -- ----------------------------
--- Table structure for log
+--  Table structure for `log`
 -- ----------------------------
 DROP TABLE IF EXISTS `log`;
 CREATE TABLE `log` (
@@ -497,7 +498,7 @@ CREATE TABLE `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='日志表';
 
 -- ----------------------------
--- Table structure for news
+--  Table structure for `news`
 -- ----------------------------
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
@@ -538,7 +539,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='博客内容';
 
 -- ----------------------------
--- Table structure for news_statistics
+--  Table structure for `news_statistics`
 -- ----------------------------
 DROP TABLE IF EXISTS `news_statistics`;
 CREATE TABLE `news_statistics` (
@@ -554,7 +555,7 @@ CREATE TABLE `news_statistics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='博客统计';
 
 -- ----------------------------
--- Table structure for news_sync_mapping
+--  Table structure for `news_sync_mapping`
 -- ----------------------------
 DROP TABLE IF EXISTS `news_sync_mapping`;
 CREATE TABLE `news_sync_mapping` (
@@ -571,7 +572,7 @@ CREATE TABLE `news_sync_mapping` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='本站blog_id 与其他同步站点的id关系';
 
 -- ----------------------------
--- Table structure for news_sync_queue
+--  Table structure for `news_sync_queue`
 -- ----------------------------
 DROP TABLE IF EXISTS `news_sync_queue`;
 CREATE TABLE `news_sync_queue` (
@@ -587,7 +588,7 @@ CREATE TABLE `news_sync_queue` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='博客同步队列';
 
 -- ----------------------------
--- Table structure for news_tag
+--  Table structure for `news_tag`
 -- ----------------------------
 DROP TABLE IF EXISTS `news_tag`;
 CREATE TABLE `news_tag` (
@@ -600,7 +601,7 @@ CREATE TABLE `news_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='博客标签';
 
 -- ----------------------------
--- Table structure for order
+--  Table structure for `order`
 -- ----------------------------
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
@@ -675,10 +676,10 @@ CREATE TABLE `order` (
   KEY `type_admin` (`type_id_admin`),
   KEY `sid` (`sid`),
   KEY `order_no_parent` (`order_no_master`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单';
+) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8mb4 COMMENT='订单';
 
 -- ----------------------------
--- Table structure for order_consignee
+--  Table structure for `order_consignee`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_consignee`;
 CREATE TABLE `order_consignee` (
@@ -700,10 +701,10 @@ CREATE TABLE `order_consignee` (
   `district_name` char(50) DEFAULT NULL COMMENT '区',
   `address_all` varchar(255) DEFAULT NULL COMMENT '地址',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单收货人';
+) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8mb4 COMMENT='订单收货人';
 
 -- ----------------------------
--- Table structure for order_ext
+--  Table structure for `order_ext`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_ext`;
 CREATE TABLE `order_ext` (
@@ -733,10 +734,10 @@ CREATE TABLE `order_ext` (
   `billing_tax_no` varchar(255) DEFAULT NULL COMMENT '税号',
   `packing_id` int(10) DEFAULT '0' COMMENT '包装ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='扩展订单信息';
+) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8mb4 COMMENT='扩展订单信息';
 
 -- ----------------------------
--- Table structure for order_goods
+--  Table structure for `order_goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_goods`;
 CREATE TABLE `order_goods` (
@@ -764,10 +765,10 @@ CREATE TABLE `order_goods` (
   `mark_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品标志ID',
   PRIMARY KEY (`id`),
   KEY `sales_id` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单商品';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='订单商品';
 
 -- ----------------------------
--- Table structure for order_goods_structure
+--  Table structure for `order_goods_structure`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_goods_structure`;
 CREATE TABLE `order_goods_structure` (
@@ -795,10 +796,10 @@ CREATE TABLE `order_goods_structure` (
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '所属组合商品ID',
   PRIMARY KEY (`id`),
   KEY `sales_id` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单商品';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='订单商品';
 
 -- ----------------------------
--- Table structure for session
+--  Table structure for `session`
 -- ----------------------------
 DROP TABLE IF EXISTS `session`;
 CREATE TABLE `session` (
@@ -816,6 +817,9 @@ CREATE TABLE `session` (
   KEY `uid` (`uid`,`type_login`,`type_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='SESSION';
 
+-- ----------------------------
+--  Table structure for `stock`
+-- ----------------------------
 DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -839,10 +843,10 @@ CREATE TABLE `stock` (
   UNIQUE KEY `mark` (`mark`) USING BTREE,
   KEY `is_user_lock` (`is_user_lock`),
   KEY `warehouse_product_wms_uid` (`warehouse_id`,`product_id`,`sid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='库存'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='库存';
 
 -- ----------------------------
--- Table structure for tag
+--  Table structure for `tag`
 -- ----------------------------
 DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
@@ -853,7 +857,7 @@ CREATE TABLE `tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='标签';
 
 -- ----------------------------
--- Table structure for template
+--  Table structure for `template`
 -- ----------------------------
 DROP TABLE IF EXISTS `template`;
 CREATE TABLE `template` (
@@ -873,7 +877,7 @@ CREATE TABLE `template` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='会员表';
 
 -- ----------------------------
--- Table structure for type
+--  Table structure for `type`
 -- ----------------------------
 DROP TABLE IF EXISTS `type`;
 CREATE TABLE `type` (
@@ -906,7 +910,7 @@ CREATE TABLE `type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='类别';
 
 -- ----------------------------
--- Table structure for user
+--  Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -933,14 +937,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='用户表';
 
 -- ----------------------------
--- Records of user
+--  Records of `user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES (1, '', 'admin', '', 'admin', '', '', '2018-05-15 21:20:46', 0, 0, '', '', NULL, NULL);
+INSERT INTO `user` VALUES ('1', '', 'admin', '', 'admin', '', '', '2018-05-15 21:20:46', '0', '0', '', '', null, null);
 COMMIT;
 
 -- ----------------------------
--- Table structure for user_group
+--  Table structure for `user_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE `user_group` (
@@ -959,7 +963,7 @@ CREATE TABLE `user_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='会员用户组';
 
 -- ----------------------------
--- Table structure for user_profile
+--  Table structure for `user_profile`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_profile`;
 CREATE TABLE `user_profile` (
@@ -979,7 +983,7 @@ CREATE TABLE `user_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='用户其他介绍';
 
 -- ----------------------------
--- Table structure for user_status
+--  Table structure for `user_status`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_status`;
 CREATE TABLE `user_status` (
