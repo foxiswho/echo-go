@@ -15,7 +15,7 @@ func MakeYearDaysRand(sum int) string {
 	//年
 	strs := time.Now().Format("06")
 	//一年中的第几天
-	days := string(datetime.GetDaysInYearByThisYear())
+	days := strconv.Itoa(datetime.GetDaysInYearByThisYear())
 	count := len(days)
 	if count < 3 {
 		//重复字符0
@@ -30,7 +30,8 @@ func MakeYearDaysRand(sum int) string {
 	}
 	//0~9999999的随机数
 	ran := GetRand()
-	pow := math.Pow(10, float64(sum+1)) - 1
+	pow := math.Pow(10, float64(sum)) - 1
+	//fmt.Println("sum=>", sum)
 	//fmt.Println("pow=>", pow)
 	result := strconv.Itoa(ran.Intn(int(pow)))
 	count = len(result)
