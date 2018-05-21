@@ -4,6 +4,8 @@ import (
 	"github.com/foxiswho/echo-go/models"
 	"github.com/foxiswho/echo-go/util"
 	"github.com/foxiswho/echo-go/service"
+	"github.com/foxiswho/echo-go/module/db"
+	"fmt"
 )
 
 //创建订单，数据来源于购物车
@@ -46,4 +48,14 @@ func (s *CreateOrderFormatFromCart) Process() ([]*models.OrderGoodsData, error) 
 		order_goods_data_all[key] = order_goods_data
 	}
 	return order_goods_data_all, nil
+}
+//删除
+func (s *CreateOrderFormatFromCart) DeleteCarts() {
+	for _, val := range s.Carts {
+		affected, err := db.DB().Engine.ID(val.Id).Delete(models.NewCart())
+		if err != nil {
+			fmt.Println("err=>", err)
+		}
+		fmt.Println("affected=>", affected)
+	}
 }

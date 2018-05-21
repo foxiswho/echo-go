@@ -77,4 +77,6 @@ func CreateOrderFormatFromCartT() {
 		fmt.Println("err", err)
 	}
 	fmt.Println("order", order)
+
+	cart_service.DeleteCarts()
 }
