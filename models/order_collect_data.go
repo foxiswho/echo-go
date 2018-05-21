@@ -1,6 +1,6 @@
 package models
 
-type OrderDate struct {
+type OrderCollectDate struct {
 	Order               *Order
 	OrderExt            *OrderExt
 	Consignee           *OrderConsignee

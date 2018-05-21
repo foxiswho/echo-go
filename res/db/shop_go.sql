@@ -239,7 +239,7 @@ CREATE TABLE `cart` (
   `amount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '合计总价',
   `warehouse_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '仓库ID',
   `sid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '供货商ID',
-  `type_id` int(11) NOT NULL DEFAULT '1' COMMENT '类别:1普通',
+  `type_id` int(11) NOT NULL DEFAULT '1' COMMENT '类别:普通',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `type_id` (`type_id`)

@@ -8,26 +8,26 @@ import (
 
 //创建订单，数据来源于购物车
 type CreateOrderFormatFromCart struct {
-	Cart []*models.Cart
+	Carts []*models.Cart
 }
 
 func NewCreateOrderFormatFromCart() *CreateOrderFormatFromCart {
 	return new(CreateOrderFormatFromCart)
 }
 
-func (s *CreateOrderFormatFromCart) SetCart(cart []*models.Cart) {
-	s.Cart = cart
+func (s *CreateOrderFormatFromCart) SetCart(carts []*models.Cart) {
+	s.Carts = carts
 }
 
 func (s *CreateOrderFormatFromCart) Process() ([]*models.OrderGoodsData, error) {
-	if s.Cart == nil {
+	if s.Carts == nil {
 		return nil, util.NewError("购物车商品数据不能为空")
 	}
-	if len(s.Cart) == 0 {
+	if len(s.Carts) == 0 {
 		return nil, util.NewError("购物车商品数据不能为空")
 	}
 	order_goods_data_all := make([]*models.OrderGoodsData, 0)
-	for _, val := range s.Cart {
+	for _, val := range s.Carts {
 		order_goods_data := models.NewOrderGoodsData()
 		goods, err := service.NewGoodsService().GetById(val.GoodsId)
 		if err != nil {

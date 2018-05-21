@@ -8,7 +8,7 @@ import (
 )
 
 type CreateOrder struct {
-	*models.OrderDate
+	*models.OrderCollectDate
 }
 
 func NewCreateOrder() *CreateOrder {

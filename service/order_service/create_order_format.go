@@ -21,6 +21,17 @@ func NewCreateOrderFormat() *CreateOrderFormat {
 	return new(CreateOrderFormat)
 }
 
+func (s *CreateOrderFormat) SetOrderGoodsData(data []*models.OrderGoodsData) {
+	s.OrderGoodsData = data
+}
+func (s *CreateOrderFormat) SetUser(user *models.User) {
+	s.User = user
+}
+
+func (s *CreateOrderFormat) SetOptions(options *options) {
+	s.Options = options
+}
+
 func (s *CreateOrderFormat) Process() (*models.Order, error) {
 	if s.OrderGoodsData == nil {
 		return nil, util.NewError("商品数据不能为空")
