@@ -27,29 +27,40 @@ func CreateOrderFormatFromCartT() {
 	}
 	//购物车数据 组合
 	cart := models.NewCart()
-	cart.Num = 10
-	cart.Price = goods_price.PriceShop
-	cart.GoodsId = goods.Id
-	cart.ProductId = goods.ProductId
-	cart.WarehouseId = goods.WarehouseId
-	cart.Sid = goods.Sid
-	cart.TypeId = cart_consts.Type_Id_Normal
-	cart.Amount = int64(cart.Num) * cart.Price
-	cart.Uid = uid
-	//保存到数据库
 	engine := db.DB().Engine
-	affected, err := engine.Insert(cart)
+	//查询是否存在
+	count, err := engine.Where("uid=?", uid).Count(cart)
 	if err != nil {
 		fmt.Println("err", err)
 	}
-	fmt.Println("affected", affected)
+	fmt.Println("count", count)
+	if count == 0 {
+		//保存到数据库
+		cart.Num = 10
+		cart.Price = goods_price.PriceShop
+		cart.GoodsId = goods.Id
+		cart.ProductId = goods.ProductId
+		cart.WarehouseId = goods.WarehouseId
+		cart.Sid = goods.Sid
+		cart.TypeId = cart_consts.Type_Id_Normal
+		cart.Amount = int64(cart.Num) * cart.Price
+		cart.Uid = uid
+
+		affected, err := engine.Insert(cart)
+		if err != nil {
+			fmt.Println("err", err)
+		}
+		fmt.Println("affected", affected)
+	}
 	///////////////////////////////////////////////////////
 	//获取购物车数据
-	carts := make([]*models.Cart, 0)
-	err = engine.Where("uid=?", uid).Find(carts)
+	carts := make([]models.Cart, 0)
+	err = engine.Where("uid=?", uid).Find(&carts)
 	if err != nil {
 		fmt.Println("err", err)
 	}
+
+	fmt.Println("carts", carts)
 	//填充数据
 	cart_service := NewCreateOrderFormatFromCart()
 	cart_service.SetCart(carts)
@@ -57,6 +68,7 @@ func CreateOrderFormatFromCartT() {
 	if err != nil {
 		fmt.Println("err", err)
 	}
+	fmt.Println("cart_service=>order_goods", order_goods)
 	order_create := NewCreateOrderFormat()
 	order_create.SetOrderGoodsData(order_goods)
 	order_create.SetUser(user)

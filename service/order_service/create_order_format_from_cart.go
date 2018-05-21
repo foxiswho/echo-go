@@ -8,14 +8,14 @@ import (
 
 //创建订单，数据来源于购物车
 type CreateOrderFormatFromCart struct {
-	Carts []*models.Cart
+	Carts []models.Cart
 }
 
 func NewCreateOrderFormatFromCart() *CreateOrderFormatFromCart {
 	return new(CreateOrderFormatFromCart)
 }
 
-func (s *CreateOrderFormatFromCart) SetCart(carts []*models.Cart) {
+func (s *CreateOrderFormatFromCart) SetCart(carts []models.Cart) {
 	s.Carts = carts
 }
 
@@ -23,11 +23,12 @@ func (s *CreateOrderFormatFromCart) Process() ([]*models.OrderGoodsData, error) 
 	if s.Carts == nil {
 		return nil, util.NewError("购物车商品数据不能为空")
 	}
-	if len(s.Carts) == 0 {
+	count := len(s.Carts)
+	if count == 0 {
 		return nil, util.NewError("购物车商品数据不能为空")
 	}
-	order_goods_data_all := make([]*models.OrderGoodsData, 0)
-	for _, val := range s.Carts {
+	order_goods_data_all := make([]*models.OrderGoodsData, count)
+	for key, val := range s.Carts {
 		order_goods_data := models.NewOrderGoodsData()
 		goods, err := service.NewGoodsService().GetById(val.GoodsId)
 		if err != nil {
@@ -37,10 +38,12 @@ func (s *CreateOrderFormatFromCart) Process() ([]*models.OrderGoodsData, error) 
 		if err != nil {
 			return nil, err
 		}
+		order_goods_data.Goods = models.NewGoods()
 		order_goods_data.Goods = goods
+		order_goods_data.GoodsPrice = models.NewGoodsPrice()
 		order_goods_data.GoodsPrice = goods_price
 		order_goods_data.Num = val.Num
-		order_goods_data_all = append(order_goods_data_all, order_goods_data)
+		order_goods_data_all[key] = order_goods_data
 	}
 	return order_goods_data_all, nil
 }

@@ -15,6 +15,29 @@ func NewCreateOrder() *CreateOrder {
 	return new(CreateOrder)
 }
 
+func (s *CreateOrder) SetOrderCollectDate(data *models.OrderCollectDate) {
+	s.OrderCollectDate = data
+}
+
+func (s *CreateOrder) SetOrder(order *models.Order) {
+	s.Order = order
+}
+func (s *CreateOrder) SetOrderExt(order_ext *models.OrderExt) {
+	s.OrderExt = order_ext
+}
+
+func (s *CreateOrder) SetOrderConsignee(data *models.OrderConsignee) {
+	s.OrderConsignee = data
+}
+
+func (s *CreateOrder) SetOrderGoods(data []*models.OrderGoods) {
+	s.OrderGoods = data
+}
+
+func (s *CreateOrder) SetOrderGoodsStructure(data []*models.OrderGoodsStructure) {
+	s.OrderGoodsStructure = data
+}
+
 func (s *CreateOrder) Process() (*models.Order, error) {
 	engine := db.DB().Engine
 	affected, err := engine.InsertOne(s.Order)
@@ -22,8 +45,8 @@ func (s *CreateOrder) Process() (*models.Order, error) {
 		return nil, util.NewError("订单保存错误")
 	}
 	log.Debugf("s.Order affected ", affected)
-	s.Consignee.Id = s.Order.Id
-	_, err = engine.InsertOne(s.Consignee)
+	s.OrderConsignee.Id = s.Order.Id
+	_, err = engine.InsertOne(s.OrderConsignee)
 	if err != nil {
 		return nil, util.NewError("订单收货人保存错误")
 	}

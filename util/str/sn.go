@@ -5,6 +5,7 @@ import (
 	"github.com/foxiswho/echo-go/util/datetime"
 	"strings"
 	"math"
+	"strconv"
 )
 
 //生成单号
@@ -29,8 +30,11 @@ func MakeYearDaysRand(sum int) string {
 	}
 	//0~9999999的随机数
 	ran := GetRand()
-	result := string(ran.Intn(int(math.Pow(0, float64(sum+1)) - 1)))
+	pow := math.Pow(10, float64(sum+1)) - 1
+	//fmt.Println("pow=>", pow)
+	result := strconv.Itoa(ran.Intn(int(pow)))
 	count = len(result)
+	//fmt.Println("result=>", result)
 	if count < sum {
 		//重复字符0
 		result = strings.Repeat("0", sum-count) + result
