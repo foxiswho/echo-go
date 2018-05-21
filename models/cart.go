@@ -10,7 +10,7 @@ type Cart struct {
 	Amount      int64 `json:"amount" xorm:"not null default 0 comment('合计总价') BIGINT(20)"`
 	WarehouseId int   `json:"warehouse_id" xorm:"not null default 0 comment('仓库ID') INT(10)"`
 	Sid         int   `json:"sid" xorm:"not null default 0 comment('供货商ID') INT(10)"`
-	TypeId      int   `json:"type_id" xorm:"not null default 1 comment('类别:1普通') index INT(11)"`
+	TypeId      int   `json:"type_id" xorm:"not null default 1 comment('类别:普通') index INT(11)"`
 }
 
 //初始化

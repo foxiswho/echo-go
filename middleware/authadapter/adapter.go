@@ -26,14 +26,14 @@ import (
 )
 
 type CasbinRule struct {
-	Id    int	`xorm:"-"`
-	PType string `xorm:"varchar(100) index"`
-	V0    string `xorm:"varchar(100) index"`
-	V1    string `xorm:"varchar(100) index"`
-	V2    string `xorm:"varchar(100) index"`
-	V3    string `xorm:"varchar(100) index"`
-	V4    string `xorm:"varchar(100) index"`
-	V5    string `xorm:"varchar(100) index"`
+	PType string `json:"p_type" xorm:"index VARCHAR(100)"`
+	V0    string `json:"v0" xorm:"index VARCHAR(100)"`
+	V1    string `json:"v1" xorm:"index VARCHAR(100)"`
+	V2    string `json:"v2" xorm:"index VARCHAR(100)"`
+	V3    string `json:"v3" xorm:"index VARCHAR(100)"`
+	V4    string `json:"v4" xorm:"index VARCHAR(100)"`
+	V5    string `json:"v5" xorm:"index VARCHAR(100)"`
+	Id    int    `json:"id" xorm:"not null pk autoincr INT(1)"`
 }
 
 // Adapter represents the Xorm adapter for policy storage.

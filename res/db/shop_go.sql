@@ -934,15 +934,6 @@ CREATE TABLE `user_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='会员用户组';
 
 -- ----------------------------
--- Table structure for user_group_ext
--- ----------------------------
-DROP TABLE IF EXISTS `user_group_ext`;
-CREATE TABLE `user_group_ext` (
-  `group_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='会员用户组扩展';
-
--- ----------------------------
 -- Table structure for user_profile
 -- ----------------------------
 DROP TABLE IF EXISTS `user_profile`;
