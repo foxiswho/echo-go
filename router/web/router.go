@@ -146,6 +146,7 @@ func Routers() *echo.Echo {
 			test.POST("/upload-more", base.Handler(web_test.UploadMorePostIndex))
 			test.POST("/upload-db", base.Handler(web_test.UploadDbHandler))
 			test.GET("/jsonp", base.Handler(web_test.JsonpIndexHandler))
+			test.GET("/order", base.Handler(web_test.NewOrder().IndexHandler))
 		}
 	}
 	////////////////////////////
