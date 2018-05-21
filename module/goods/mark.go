@@ -17,6 +17,8 @@ func GetMark(mark_id goods_consts.MarkId, product_id, warehouse_id, sid int) str
 }
 
 //根据商品数据获取唯一标志
+//普通商品:MarkId-ProductId-WarehouseId-Sid
+//组合商品:MarkId-GoodsId
 func GetMarkByGoods(goods *models.Goods) string {
 	if int(goods_consts.MARK_ID_COMBINED) == goods.MarkId {
 		return strconv.Itoa(goods.MarkId) + "-" + strconv.Itoa(goods.Id)
