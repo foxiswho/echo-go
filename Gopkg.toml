@@ -34,6 +34,10 @@
   name = "github.com/bradfitz/gomemcache"
 
 [[constraint]]
+  name = "github.com/casbin/casbin"
+  version = "1.5.0"
+
+[[constraint]]
   branch = "master"
   name = "github.com/dchest/captcha"
 
@@ -42,8 +46,8 @@
   version = "3.2.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/flosch/pongo2"
+  version = "3.0.0"
 
 [[constraint]]
   name = "github.com/garyburd/redigo"
@@ -66,20 +70,28 @@
   version = "1.1.0"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/hb-go/json"
+  name = "github.com/labstack/echo"
+  version = "3.3.5"
 
 [[constraint]]
-  name = "github.com/labstack/echo"
-  version = "3.3.4"
+  name = "github.com/labstack/echo-contrib"
+  version = "0.5.2"
 
 [[constraint]]
   name = "github.com/labstack/gommon"
-  version = "0.2.4"
+  version = "0.2.5"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/lib/pq"
 
 [[constraint]]
   name = "github.com/opentracing/opentracing-go"
   version = "1.0.2"
+
+[[constraint]]
+  name = "github.com/qiniu/api.v7"
+  version = "7.2.3"
 
 [[constraint]]
   branch = "master"
@@ -87,15 +99,23 @@
 
 [[constraint]]
   name = "github.com/uber/jaeger-client-go"
-  version = "2.12.0"
+  version = "2.14.0"
 
 [[constraint]]
   name = "github.com/uber/jaeger-lib"
-  version = "1.4.0"
+  version = "1.5.0"
 
 [[constraint]]
   branch = "master"
   name = "github.com/xormplus/xorm"
+
+[[constraint]]
+  branch = "master"
+  name = "golang.org/x/net"
+
+[[constraint]]
+  branch = "master"
+  name = "sourcegraph.com/sourcegraph/appdash"
 
 [prune]
   go-tests = true
