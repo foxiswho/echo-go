@@ -5,6 +5,11 @@ import:
 - package: github.com/bradfitz/gomemcache
   subpackages:
   - memcache
+- package: github.com/casbin/casbin
+  version: ~1.5.0
+  subpackages:
+  - model
+  - persist
 - package: github.com/dchest/captcha
 - package: github.com/dgrijalva/jwt-go
   version: ~3.2.0
@@ -28,12 +33,22 @@ import:
   version: ~3.3.5
   subpackages:
   - middleware
+- package: github.com/labstack/echo-contrib
+  version: ~0.5.2
+  subpackages:
+  - casbin
 - package: github.com/labstack/gommon
   version: ~0.2.5
   subpackages:
   - log
+- package: github.com/lib/pq
 - package: github.com/opentracing/opentracing-go
   version: ~1.0.2
+- package: github.com/qiniu/api.v7
+  version: ~7.2.3
+  subpackages:
+  - auth/qbox
+  - storage
 - package: github.com/robfig/go-cache
 - package: github.com/uber/jaeger-client-go
   version: ~2.14.0
