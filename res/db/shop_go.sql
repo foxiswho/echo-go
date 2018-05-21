@@ -816,6 +816,31 @@ CREATE TABLE `session` (
   KEY `uid` (`uid`,`type_login`,`type_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='SESSION';
 
+DROP TABLE IF EXISTS `stock`;
+CREATE TABLE `stock` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `warehouse_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '仓库ID',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品ID',
+  `sid` int(11) NOT NULL DEFAULT '0' COMMENT '供应商ID',
+  `number` char(100) DEFAULT NULL COMMENT '商品编号',
+  `barcode` char(32) DEFAULT NULL COMMENT '条形码',
+  `title` varchar(200) DEFAULT NULL COMMENT '商品标题',
+  `num` int(11) NOT NULL DEFAULT '0' COMMENT '数量(展示库存)',
+  `is_user_lock` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否有用户锁定库存',
+  `type_id` int(11) NOT NULL DEFAULT '0' COMMENT '类别',
+  `num_available` int(11) NOT NULL DEFAULT '0' COMMENT '可用数量',
+  `num_locking` int(10) NOT NULL DEFAULT '0' COMMENT '锁定库存',
+  `num_user_lock` int(11) NOT NULL DEFAULT '0' COMMENT '用户锁定数量',
+  `num_wms` int(10) NOT NULL DEFAULT '0' COMMENT 'wms库存=可用数量+用户锁定数量-锁定库存',
+  `mark` char(32) DEFAULT NULL COMMENT '标志',
+  `gmt_create` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mark` (`mark`) USING BTREE,
+  KEY `is_user_lock` (`is_user_lock`),
+  KEY `warehouse_product_wms_uid` (`warehouse_id`,`product_id`,`sid`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='库存'
+
 -- ----------------------------
 -- Table structure for tag
 -- ----------------------------
