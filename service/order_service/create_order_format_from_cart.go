@@ -3,9 +3,9 @@ package order_service
 import (
 	"github.com/foxiswho/echo-go/models"
 	"github.com/foxiswho/echo-go/util"
-	"github.com/foxiswho/echo-go/service"
 	"github.com/foxiswho/echo-go/module/db"
 	"fmt"
+	"github.com/foxiswho/echo-go/service/base"
 )
 
 //创建订单，数据来源于购物车
@@ -32,11 +32,11 @@ func (s *CreateOrderFormatFromCart) Process() ([]*models.OrderGoodsData, error) 
 	order_goods_data_all := make([]*models.OrderGoodsData, count)
 	for key, val := range s.Carts {
 		order_goods_data := models.NewOrderGoodsData()
-		goods, err := service.NewGoodsService().GetById(val.GoodsId)
+		goods, err := base.NewGoodsService().GetById(val.GoodsId)
 		if err != nil {
 			return nil, err
 		}
-		goods_price, err := service.NewGoodsPriceService().GetById(val.GoodsId)
+		goods_price, err := base.NewGoodsPriceService().GetById(val.GoodsId)
 		if err != nil {
 			return nil, err
 		}

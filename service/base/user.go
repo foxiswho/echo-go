@@ -8,22 +8,22 @@ import (
 	"github.com/foxiswho/echo-go/util"
 )
 
-type {{.tables_camel_case}}Service struct {
+type UserService struct {
 
 }
 
-func New{{.tables_camel_case}}Service() *{{.tables_camel_case}}Service {
-	return new({{.tables_camel_case}}Service)
+func NewUserService() *UserService {
+	return new(UserService)
 }
 
 //初始化列表
-func {{.tables_little_camel_case}}NewMakeDataArr() []models.{{.tables_camel_case}} {
-	return make([]models.{{.tables_camel_case}}, 0)
+func userNewMakeDataArr() []models.User {
+	return make([]models.User, 0)
 }
 
 //列表查询
-func (s *{{.tables_camel_case}}Service) GetAll(where []*db.QueryCondition, fields []string, orderBy string, page int, limit int) (*db.Paginator, error) {
-	m := models.New{{.tables_camel_case}}()
+func (s *UserService) GetAll(where []*db.QueryCondition, fields []string, orderBy string, page int, limit int) (*db.Paginator, error) {
+	m := models.NewUser()
 	session := db.Filter(where)
 	count, err := session.Count(m)
 	if err != nil {
@@ -43,7 +43,7 @@ func (s *{{.tables_camel_case}}Service) GetAll(where []*db.QueryCondition, field
 	if len(fields) == 0 {
 		session.AllCols()
 	}
-	data := {{.tables_little_camel_case}}NewMakeDataArr()
+	data := userNewMakeDataArr()
 	err = session.Find(&data)
 	if err != nil {
 		fmt.Println(err)
@@ -58,8 +58,8 @@ func (s *{{.tables_camel_case}}Service) GetAll(where []*db.QueryCondition, field
 
 
 // 获取 单条记录
-func (s *{{.tables_camel_case}}Service) GetById(id int) (*models.{{.tables_camel_case}}, error) {
-    m:=new(models.{{.tables_camel_case}})
+func (s *UserService) GetById(id int) (*models.User, error) {
+    m:=new(models.User)
 	m.Id = id
 	ok, err := db.DB().Engine.Get(m)
     if err != nil {
@@ -72,8 +72,8 @@ func (s *{{.tables_camel_case}}Service) GetById(id int) (*models.{{.tables_camel
 }
 
 // 删除 单条记录
-func (s *{{.tables_camel_case}}Service) Delete(id int) (int64, error) {
-	m:=new(models.{{.tables_camel_case}})
+func (s *UserService) Delete(id int) (int64, error) {
+	m:=new(models.User)
 	m.Id = id
 	num, err := db.DB().Engine.Delete(m)
 	if err == nil {

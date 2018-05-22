@@ -3,25 +3,25 @@ package order_service
 import (
 	"github.com/foxiswho/echo-go/module/db"
 	"github.com/foxiswho/echo-go/models"
-	"github.com/foxiswho/echo-go/service"
 	"fmt"
 	"github.com/foxiswho/echo-go/consts/cart_consts"
+	"github.com/foxiswho/echo-go/service/base"
 )
 
 func CreateOrderFormatFromCartT() {
 	//
 	uid := 1
-	user, err := service.NewUserService().GetById(uid)
+	user, err := base.NewUserService().GetById(uid)
 	if err != nil {
 		fmt.Println("err", err)
 	}
 	//查询出指定商品数据
 	goods_id := 1002
-	goods, err := service.NewGoodsService().GetById(goods_id)
+	goods, err := base.NewGoodsService().GetById(goods_id)
 	if err != nil {
 		fmt.Println("err", err)
 	}
-	goods_price, err := service.NewGoodsPriceService().GetById(goods_id)
+	goods_price, err := base.NewGoodsPriceService().GetById(goods_id)
 	if err != nil {
 		fmt.Println("err", err)
 	}
