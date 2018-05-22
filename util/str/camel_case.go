@@ -2,7 +2,6 @@ package str
 
 import (
 	"strings"
-	"regexp"
 )
 
 func gonicCasedName(name string) string {
@@ -129,11 +128,12 @@ func FirstToUpper(str string) string {
  * 字符串首字母转化为大写 ios_bbbbbbbb -> iosBbbbbbbbb
  */
 func LittleCamelCase(str string) string {
-	str = LintGonicMapper.Table2Obj(str)
-	reg := regexp.MustCompile(`^[a-z]{1}`)
-	return reg.ReplaceAllStringFunc(str, func(s string) string {
-		return strings.ToUpper(s)
-	})
+	//str = LintGonicMapper.Table2Obj(str)
+	//reg := regexp.MustCompile(`^\w{1}`)
+	//return reg.ReplaceAllStringFunc(str, func(s string) string {
+	//	return strings.ToUpper(s)
+	//})
+	return FirstToUpper(str)
 }
 
 /**
