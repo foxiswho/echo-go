@@ -1,7 +1,7 @@
 package socket
 
 import (
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 	"golang.org/x/net/websocket"
 
 	"github.com/foxiswho/echo-go/module/log"

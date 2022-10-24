@@ -1,37 +1,37 @@
 package web
 
 import (
-	"github.com/labstack/echo"
-	mw "github.com/labstack/echo/middleware"
+	"github.com/labstack/echo/v4"
+	mw "github.com/labstack/echo/v4/middleware"
 
 	"github.com/foxiswho/echo-go/middleware/captcha"
 	"github.com/foxiswho/echo-go/middleware/staticbin"
 
+	"github.com/casbin/casbin"
 	"github.com/foxiswho/echo-go/assets"
 	. "github.com/foxiswho/echo-go/conf"
+	auth_casbin "github.com/foxiswho/echo-go/middleware/auth"
+	"github.com/foxiswho/echo-go/middleware/authadapter"
 	"github.com/foxiswho/echo-go/middleware/opentracing"
 	"github.com/foxiswho/echo-go/module/auth"
 	"github.com/foxiswho/echo-go/module/cache"
 	"github.com/foxiswho/echo-go/module/render"
 	"github.com/foxiswho/echo-go/module/session"
-	serviceAuth "github.com/foxiswho/echo-go/service/user_service/auth"
-	serviceAdminAuth "github.com/foxiswho/echo-go/service/admin_service/auth"
-	web_index "github.com/foxiswho/echo-go/router/web/index"
-	web_test "github.com/foxiswho/echo-go/router/example/test"
+	"github.com/foxiswho/echo-go/router/base"
 	example_admin "github.com/foxiswho/echo-go/router/example/admin"
 	example_goods "github.com/foxiswho/echo-go/router/example/admin/goods"
-	"github.com/foxiswho/echo-go/router/base"
-	"github.com/foxiswho/echo-go/router/example/api"
-	"github.com/foxiswho/echo-go/middleware/authadapter"
-	"github.com/casbin/casbin"
-	auth_casbin "github.com/foxiswho/echo-go/middleware/auth"
 	rbac2 "github.com/foxiswho/echo-go/router/example/admin/rbac"
+	"github.com/foxiswho/echo-go/router/example/api"
+	web_test "github.com/foxiswho/echo-go/router/example/test"
 	"github.com/foxiswho/echo-go/router/web/design"
+	web_index "github.com/foxiswho/echo-go/router/web/index"
+	serviceAdminAuth "github.com/foxiswho/echo-go/service/admin_service/auth"
+	serviceAuth "github.com/foxiswho/echo-go/service/user_service/auth"
 )
 
-//---------
+// ---------
 // Website Routers
-//---------
+// ---------
 func Routers() *echo.Echo {
 	// Echo instance
 	e := echo.New()

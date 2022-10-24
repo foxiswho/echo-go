@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 
 	. "github.com/foxiswho/echo-go/conf"
 	"github.com/foxiswho/echo-go/module/log"
@@ -52,7 +52,6 @@ func (bf BindataFileLoader) Abs(base, name string) string {
 }
 
 func (bf BindataFileLoader) Get(path string) (io.Reader, error) {
-
 
 	buf, err := bdTmpl.Asset(path)
 	if err != nil {

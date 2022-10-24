@@ -3,10 +3,12 @@ package api
 import (
 	"net/http"
 	"strconv"
+
 	// "time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
+
 	// "github.com/jinzhu/gorm"
 
 	userService "github.com/foxiswho/echo-go/service/example_service"
@@ -24,9 +26,9 @@ func UserHandler(c echo.Context) error {
 	u := userService.GetUserById(id)
 
 	c.JSON(http.StatusOK, map[string]interface{}{
-		"title":  "Admin",
-		"user_service":   u,
-		"claims": claims,
+		"title":        "Admin",
+		"user_service": u,
+		"claims":       claims,
 	})
 
 	return nil

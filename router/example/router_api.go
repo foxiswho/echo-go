@@ -1,21 +1,21 @@
 package example
 
 import (
+	"net/http"
 
-	"github.com/labstack/echo"
-	mw "github.com/labstack/echo/middleware"
-	"github.com/foxiswho/echo-go/module/session"
 	. "github.com/foxiswho/echo-go/conf"
 	"github.com/foxiswho/echo-go/middleware/opentracing"
 	"github.com/foxiswho/echo-go/module/cache"
+	"github.com/foxiswho/echo-go/module/session"
 	"github.com/foxiswho/echo-go/router/base"
 	"github.com/foxiswho/echo-go/router/example/api"
-	"net/http"
+	"github.com/labstack/echo/v4"
+	mw "github.com/labstack/echo/v4/middleware"
 )
 
-//-----
+// -----
 // API RoutersApi
-//-----
+// -----
 func RoutersApi() *echo.Echo {
 	// Echo instance
 	e := echo.New()
@@ -54,8 +54,6 @@ func RoutersApi() *echo.Echo {
 
 	e.Static("/favicon.ico", "./assets/img/favicon.ico")
 
-
-
 	// Cache
 	e.Use(cache.Cache())
 
@@ -70,14 +68,14 @@ func RoutersApi() *echo.Echo {
 	e.GET("/", accessible)
 	json := e.Group("/json")
 	{
-		json.GET("/jsonp",base.Handler(api.JsonpHandler))
+		json.GET("/jsonp", base.Handler(api.JsonpHandler))
 	}
 	// JWT
 	j := e.Group("/jwt")
 	{
 		// Login route
 		j.POST("/login", base.Handler(api.JwtLoginPostHandler))
-		i:=j.Group("/restricted")
+		i := j.Group("/restricted")
 		{
 			// Configure middleware with the custom claims type
 			config := mw.JWTConfig{
@@ -92,7 +90,6 @@ func RoutersApi() *echo.Echo {
 			//}))
 			i.GET("/xx", api.JwtApiHandler)
 		}
-
 
 		//curl http://echo.api.localhost:8080/restricted/user -H "Authorization: Bearer XXX"
 		//r.GET("/user_service", UserHandler)

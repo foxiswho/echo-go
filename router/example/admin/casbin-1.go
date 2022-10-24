@@ -2,8 +2,8 @@ package admin
 
 import (
 	"github.com/casbin/casbin"
-	"github.com/labstack/echo"
 	casbinmw "github.com/labstack/echo-contrib/casbin"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {

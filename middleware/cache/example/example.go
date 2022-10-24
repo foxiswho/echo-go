@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/foxiswho/echo-go/middleware/cache"
-	"github.com/labstack/echo"
 	"time"
+
+	"github.com/foxiswho/echo-go/middleware/cache"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {

@@ -7,13 +7,14 @@ import (
 
 	"github.com/foxiswho/echo-go/middleware/session"
 
+	"fmt"
+
+	"github.com/dgrijalva/jwt-go"
 	"github.com/foxiswho/echo-go/module/cache"
 	"github.com/foxiswho/echo-go/module/log"
-	"github.com/foxiswho/echo-go/service/user_service/auth"
 	userService "github.com/foxiswho/echo-go/service/example_service"
-	"github.com/labstack/echo"
-	"github.com/dgrijalva/jwt-go"
-	"fmt"
+	"github.com/foxiswho/echo-go/service/user_service/auth"
+	"github.com/labstack/echo/v4"
 )
 
 func JwtApiHandler(c echo.Context) error {
@@ -26,12 +27,12 @@ func JwtApiHandler(c echo.Context) error {
 	user := c.Get("user").(*jwt.Token)
 	claims := user.Claims.(*JwtCustomClaims)
 	name := claims.Name
-	log.Debugf("Claims",claims)
-	log.Debugf("name",name)
-	fmt.Println("ClaimsClaimsClaimsClaims",claims)
-	fmt.Println("ClaimsClaimsClaimsClaims",claims)
-	fmt.Println("ClaimsClaimsClaimsClaims",claims)
-	fmt.Println("name",name)
+	log.Debugf("Claims", claims)
+	log.Debugf("name", name)
+	fmt.Println("ClaimsClaimsClaimsClaims", claims)
+	fmt.Println("ClaimsClaimsClaimsClaims", claims)
+	fmt.Println("ClaimsClaimsClaimsClaims", claims)
+	fmt.Println("name", name)
 	idStr := c.QueryParam("id")
 	id, err := strconv.ParseUint(idStr, 10, 64)
 
@@ -64,11 +65,11 @@ func JwtApiHandler(c echo.Context) error {
 	s.AddFlash("20", "key2")
 	s.AddFlash("21", "key2")
 	c.Response().Header().Del("Access-Control-Allow-Origin")
-	c.Response().Header().Add("Access-Control-Allow-Origin","*")
+	c.Response().Header().Add("Access-Control-Allow-Origin", "*")
 	request := c.Request()
 	return c.JSON(http.StatusOK, map[string]interface{}{
 		"title":        "Api Index",
-		"Admin":         u,
+		"Admin":        u,
 		"CacheValue":   value,
 		"URL":          request.URL,
 		"Scheme":       request.URL.Scheme,

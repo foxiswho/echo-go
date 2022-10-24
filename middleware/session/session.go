@@ -9,9 +9,9 @@ package session
 import (
 	"net/http"
 
-	"github.com/labstack/gommon/log"
 	"github.com/gorilla/sessions"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/gommon/log"
 )
 
 const (

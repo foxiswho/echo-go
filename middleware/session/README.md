@@ -18,7 +18,7 @@ import (
     "net/http"
 
     "github.com/gorilla/context"
-    "github.com/labstack/echo"
+    "github.com/labstack/echo/v4"
     "github.com/hobo-go/echo-mw/session"
 )
 

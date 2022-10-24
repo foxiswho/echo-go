@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/dchest/captcha"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 type Config struct {

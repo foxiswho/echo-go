@@ -7,11 +7,12 @@ import (
 	"crypto/sha1"
 	"errors"
 	"fmt"
-	"github.com/labstack/echo"
 	"io"
 	"net/http"
 	"net/url"
 	"time"
+
+	"github.com/labstack/echo/v4"
 )
 
 const (

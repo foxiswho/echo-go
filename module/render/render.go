@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 
 	"github.com/foxiswho/echo-go/middleware/multitemplate"
 	"github.com/foxiswho/echo-go/middleware/pongo2echo"
@@ -85,7 +85,7 @@ func getCommonContext(c echo.Context) map[string]interface{} {
 	fmt.Println("a.Admin======>")
 	fmt.Println("a.Admin======>")
 	fmt.Println("a.Admin======>")
-	fmt.Println("a.Admin======>",a.User)
+	fmt.Println("a.Admin======>", a.User)
 	// 公共模板数据
 	commonDatas := make(map[string]interface{})
 	//commonDatas["_user"] = a.Admin.(*model.Admin)
@@ -139,7 +139,7 @@ func LoadTemplates() echo.Renderer {
 		case BINDATA:
 			return pongo2echo.New(
 				pongo2echo.RenderOptions{
-					TmplLoader: BindataFileLoader{baseDir: Conf.Tmpl.Dir},
+					TmplLoader:  BindataFileLoader{baseDir: Conf.Tmpl.Dir},
 					ContentType: "text/html; charset=utf-8",
 					Debug:       !Conf.ReleaseMode,
 				})

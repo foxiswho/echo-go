@@ -4,7 +4,7 @@ import (
 	"time"
 
 	ec "github.com/foxiswho/echo-go/middleware/cache"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 
 	. "github.com/foxiswho/echo-go/conf"
 )

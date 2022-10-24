@@ -7,7 +7,7 @@ import (
 	"path"
 
 	"github.com/flosch/pongo2"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 // RenderOptions is used to configure the renderer.

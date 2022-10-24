@@ -6,16 +6,17 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/labstack/echo"
+	"io"
+
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
 	"github.com/opentracing/opentracing-go"
-	"sourcegraph.com/sourcegraph/appdash"
-	"github.com/uber/jaeger-lib/metrics"
 	"github.com/uber/jaeger-client-go"
 	jaegercfg "github.com/uber/jaeger-client-go/config"
+	"github.com/uber/jaeger-lib/metrics"
+	"sourcegraph.com/sourcegraph/appdash"
 	appdashot "sourcegraph.com/sourcegraph/appdash/opentracing"
 	"sourcegraph.com/sourcegraph/appdash/traceapp"
-	"io"
 )
 
 const (

@@ -1,12 +1,13 @@
 package auth
 
 import (
+	"strconv"
+
 	"github.com/casbin/casbin"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
 	"github.com/foxiswho/echo-go/module/auth"
 	"github.com/foxiswho/echo-go/module/log"
-	"strconv"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 type (

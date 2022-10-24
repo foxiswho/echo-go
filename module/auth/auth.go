@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/foxiswho/echo-go/middleware/session"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 const (

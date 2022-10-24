@@ -1,7 +1,7 @@
 package session
 
 import (
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 
 	es "github.com/foxiswho/echo-go/middleware/session"
 

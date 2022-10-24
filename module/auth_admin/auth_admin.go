@@ -1,5 +1,5 @@
 // Base on https://github.com/martini-contrib/sessionauth
-//这里不能随便自定义，否则，需要改的好多地方，如 模板
+// 这里不能随便自定义，否则，需要改的好多地方，如 模板
 package auth_admin
 
 import (
@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"github.com/foxiswho/echo-go/middleware/session"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 const (
