@@ -3,6 +3,7 @@ package example_service
 import (
 	"fmt"
 	"time"
+
 	"github.com/foxiswho/echo-go/module/db"
 	"github.com/foxiswho/echo-go/module/log"
 	"github.com/foxiswho/echo-go/service/admin_service/auth"
@@ -46,7 +47,7 @@ func (x *Admin) AddUserWithNicknamePwd(nickname string, pwd string) *auth.Admin 
 
 func (x *Admin) GetById(id uint64) *auth.Admin {
 	user := new(auth.Admin)
-	if _, err := db.DB().Engine.Id(id).Get(user); err != nil {
+	if _, err := db.DB().Engine.ID(id).Get(user); err != nil {
 		log.Debugf("GetUserById error: %v", err)
 		return nil
 	}

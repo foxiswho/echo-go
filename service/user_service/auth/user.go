@@ -1,12 +1,13 @@
 package auth
 
 import (
-	"github.com/foxiswho/echo-go/module/auth"
-	"github.com/foxiswho/echo-go/module/log"
-	"github.com/foxiswho/echo-go/module/db"
 	"fmt"
-	"github.com/foxiswho/echo-go/module/model"
+
 	"github.com/foxiswho/echo-go/models"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/db"
+	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/module/model"
 )
 
 type User struct {
@@ -60,8 +61,8 @@ func (u *User) Module() string {
 // a matching id.
 func (u *User) GetById(id interface{}) error {
 	//newu:=new(Admin)
-	//newdb.DB().Engine.Id(id).Get(&u)
-	_, err := db.DB().Engine.Id(id).Get(u)
+	//newdb.DB().Engine.ID(id).Get(&u)
+	_, err := db.DB().Engine.ID(id).Get(u)
 	fmt.Println("GetById=>")
 	fmt.Println("GetById=>")
 	fmt.Println("GetById=>id", id)

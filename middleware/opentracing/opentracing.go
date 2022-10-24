@@ -68,8 +68,7 @@ func initGlobalTracer_Jaeger(serviceName, addr string) io.Closer {
 	// frameworks.
 	jLogger := &jaegerLogger{}
 	jMetricsFactory := metrics.NullFactory
-
-	metricsFactory := metrics.NewLocalFactory(0)
+	metricsFactory := metrics.NullFactory
 	metrics := jaeger.NewMetrics(metricsFactory, nil)
 
 	sender, err := jaeger.NewUDPTransport(addr, 0)

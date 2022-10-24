@@ -3,18 +3,19 @@ package file
 import (
 	"context"
 	"fmt"
-	"github.com/qiniu/api.v7/auth/qbox"
-	"github.com/qiniu/api.v7/storage"
 	"mime/multipart"
 	"os"
 	"strings"
 	"time"
-	"github.com/foxiswho/echo-go/module/cache"
+
 	"github.com/foxiswho/echo-go/conf"
+	"github.com/foxiswho/echo-go/module/cache"
 	"github.com/foxiswho/echo-go/util"
+	"github.com/qiniu/go-sdk/v7/auth/qbox"
+	"github.com/qiniu/go-sdk/v7/storage"
 )
 
-//七牛云存储
+// 七牛云存储
 type QiNiu struct {
 	Config *conf.Upload `json:"-"`
 }
@@ -25,18 +26,18 @@ type PutRet struct {
 	Key  string `json:"key"`
 }
 
-//初始化
+// 初始化
 func NewQiNiu() *QiNiu {
 	return new(QiNiu)
 }
 
-//获取配置
+// 获取配置
 func (t *QiNiu) setConfig() (bool, error) {
 	t.Config = &conf.Conf.Upload
 	return true, nil
 }
 
-//七牛配置读取
+// 七牛配置读取
 func (t *QiNiu) SetQiNiuConfig() (bool, error) {
 	ok, err := t.setConfig()
 	if err != nil {
@@ -50,12 +51,12 @@ func (t *QiNiu) SetQiNiuConfig() (bool, error) {
 	return true, nil
 }
 
-//设置 token 缓存
+// 设置 token 缓存
 func (t *QiNiu) setToken() string {
 	// 初始化AK，SK
 	putPolicy := storage.PutPolicy{
 		Scope:   t.Config.RootPath, // 设置上传到的空间 bucket
-		Expires: 3601,               //设置Token过期时间
+		Expires: 3601,              //设置Token过期时间
 	}
 	//access_key secret_key
 	mac := qbox.NewMac(t.Config.RootPath, t.Config.RootPath)
@@ -69,7 +70,7 @@ func (t *QiNiu) setToken() string {
 	return token
 }
 
-//获取
+// 获取
 func (t *QiNiu) GetToken() string {
 	str := ""
 	err := cache.Client().Get("qiniu_token", &str)
@@ -82,7 +83,7 @@ func (t *QiNiu) GetToken() string {
 	return t.setToken()
 }
 
-//上传
+// 上传
 func (t *QiNiu) Upload(file multipart.File, UploadFile *UploadFile) (interface{}, error) {
 	//七牛配置填充
 	_, err := t.SetQiNiuConfig()

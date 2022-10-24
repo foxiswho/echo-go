@@ -1,10 +1,10 @@
 package auth
 
 import (
-	"github.com/foxiswho/echo-go/module/db"
-	"github.com/foxiswho/echo-go/module/auth"
-	"github.com/foxiswho/echo-go/module/model"
 	"github.com/foxiswho/echo-go/models"
+	"github.com/foxiswho/echo-go/module/auth"
+	"github.com/foxiswho/echo-go/module/db"
+	"github.com/foxiswho/echo-go/module/model"
 )
 
 type Admin struct {
@@ -59,7 +59,7 @@ func (u *Admin) Module() string {
 // GetById will populate a user_service object from a database model with
 // a matching id.
 func (u *Admin) GetById(id interface{}) error {
-	_, err := db.DB().Engine.Id(id).Get(u)
+	_, err := db.DB().Engine.ID(id).Get(u)
 	if err != nil {
 		return err
 	}

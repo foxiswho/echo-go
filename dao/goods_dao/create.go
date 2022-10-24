@@ -1,12 +1,13 @@
 package goods_dao
 
 import (
+	"fmt"
+
 	"github.com/foxiswho/echo-go/models"
 	"github.com/foxiswho/echo-go/module/db"
-	"github.com/foxiswho/echo-go/util"
 	"github.com/foxiswho/echo-go/module/goods"
-	"fmt"
 	"github.com/foxiswho/echo-go/module/log"
+	"github.com/foxiswho/echo-go/util"
 )
 
 type Create struct {
@@ -30,7 +31,7 @@ func (s *Create) Process() (int, error) {
 	mark := models.NewGoods()
 	mark.Mark = goods.GetMarkByGoods(s.Goods)
 	fmt.Println("update mark ", mark.Mark)
-	up, err := engine.Id(s.Goods.Id).Update(mark)
+	up, err := engine.ID(s.Goods.Id).Update(mark)
 	fmt.Println("UPDATE", up)
 	fmt.Println("UPDATE err", err)
 	//

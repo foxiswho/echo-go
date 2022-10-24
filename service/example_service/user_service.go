@@ -1,15 +1,15 @@
 package example_service
 
 import (
-	"time"
 	"fmt"
+	"time"
+
 	"github.com/foxiswho/echo-go/module/db"
 	"github.com/foxiswho/echo-go/module/log"
 	"github.com/foxiswho/echo-go/service/user_service/auth"
 )
 
 type User struct {
-
 }
 
 func NewUserService() *User {
@@ -36,10 +36,10 @@ func GetUserByNicknamePwd(nickname string, pwd string) *auth.User {
 
 func AddUserWithNicknamePwd(nickname string, pwd string) *auth.User {
 	user := new(auth.User)
-	user.Username=nickname
-	user.Password=pwd
-	user.RegTime=time.Now()
-	if _,err:=db.DB().Engine.Insert(user); err != nil {
+	user.Username = nickname
+	user.Password = pwd
+	user.RegTime = time.Now()
+	if _, err := db.DB().Engine.Insert(user); err != nil {
 		return nil
 	}
 	return user
@@ -54,7 +54,7 @@ func GetUserById(id uint64) *auth.User {
 	//	return nil
 	//}
 
-	if _, err := db.DB().Engine.Id(id).Get(user); err != nil {
+	if _, err := db.DB().Engine.ID(id).Get(user); err != nil {
 		log.Debugf("GetUserById error: %v", err)
 		return nil
 	}
